@@ -1,0 +1,12 @@
+{
+  "name": "domimarket-login",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "vercel dev"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2",
+    "jsonwebtoken": "^9.0.0"
+  }
+}
