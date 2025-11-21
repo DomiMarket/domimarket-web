@@ -1,4 +1,4 @@
-/* Reset básico */
+/* Reset */
 * {
     margin: 0;
     padding: 0;
@@ -9,53 +9,59 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f5f5f5;
+    scroll-behavior: smooth; /* scroll suave */
 }
 
-/* Sección Hero */
+/* Hero */
 .hero {
-    background: linear-gradient(to right, #4e54c8, #8f94fb);
-    color: #fff;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    background: linear-gradient(135deg, #4e54c8, #8f94fb);
     text-align: center;
-    height: 100vh;
-    flex-direction: column;
-    padding: 20px;
+    color: #fff;
 }
 
 .hero .logo {
     max-width: 160px;
     margin-bottom: 20px;
+    animation: logo-appear 1s ease forwards;
 }
 
 .hero h1 {
     font-size: 36px;
     margin-bottom: 10px;
+    animation: fade-slide 1s ease forwards;
+    animation-delay: 0.3s;
 }
 
 .hero p {
     font-size: 18px;
     margin-bottom: 25px;
+    animation: fade-slide 1s ease forwards;
+    animation-delay: 0.6s;
 }
 
-#loginBtn {
+.login-btn {
+    display: inline-block;
     background-color: #5865F2;
-    color: #fff;
-    border: none;
+    color: white;
     padding: 14px 28px;
     border-radius: 10px;
+    text-decoration: none;
     font-size: 18px;
-    cursor: pointer;
     transition: all 0.3s ease;
+    animation: fade-slide 1s ease forwards;
+    animation-delay: 0.9s;
 }
 
-#loginBtn:hover {
+.login-btn:hover {
     background-color: #4752c4;
     transform: scale(1.05);
 }
 
-/* Productos destacados */
+/* Productos */
 .products {
     padding: 60px 20px;
     text-align: center;
@@ -79,11 +85,12 @@ body {
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     width: 250px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .product-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 
 /* Estadísticas */
@@ -106,4 +113,28 @@ body {
 .stat p {
     font-size: 16px;
     color: #555;
+}
+
+/* Animaciones */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes logo-appear {
+    from { opacity: 0; transform: scale(0.5);}
+    to { opacity: 1; transform: scale(1);}
+}
+
+@keyframes fade-slide {
+    from { opacity: 0; transform: translateY(20px);}
+    to { opacity: 1; transform: translateY(0);}
 }

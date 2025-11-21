@@ -7,18 +7,19 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Sección de encabezado / landing -->
+
+    <!-- Hero / Cabecera -->
     <header class="hero">
-        <div class="hero-content">
+        <div class="hero-content fade-in">
             <img src="https://i.postimg.cc/Z5ZTtjpT/Gemini-Generated-Image-6bppp06bppp06bpp.png" alt="DomiMarket Logo" class="logo">
             <h1>Bienvenido a DomiMarket</h1>
-            <p>Recursos exclusivos de MTA a un clic de distancia.</p>
-            <button id="loginBtn">Iniciar sesión con Discord</button>
+            <p>Recursos exclusivos de MTA al alcance de tu mano</p>
+            <a href="#login" class="login-btn">Iniciar sesión con Discord</a>
         </div>
     </header>
 
-    <!-- Sección de productos destacados -->
-    <section class="products">
+    <!-- Productos destacados -->
+    <section class="products fade-in">
         <h2>Recursos Destacados</h2>
         <div class="product-list">
             <div class="product-card">
@@ -36,8 +37,8 @@
         </div>
     </section>
 
-    <!-- Sección de estadísticas / clientes -->
-    <section class="stats">
+    <!-- Estadísticas -->
+    <section class="stats fade-in">
         <div class="stat">
             <h3>+500</h3>
             <p>Clientes satisfechos</p>
@@ -51,6 +52,9 @@
             <p>Recursos nuevos al mes</p>
         </div>
     </section>
+
+    <!-- Login section invisible, solo para redirigir -->
+    <div id="login"></div>
 
     <script src="script.js"></script>
 </body>
