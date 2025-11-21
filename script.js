@@ -1,5 +1,6 @@
 // Login con Discord
-const loginBtn = document.querySelector(".login-btn");
-loginBtn.addEventListener("click", () => {
-    window.location.href = "https://domimarket-login.vercel.app/api/auth/discord";
+document.querySelectorAll(".login-btn, .login-btn-header").forEach(btn => {
+    btn.addEventListener("click", () => {
+        window.location.href = "https://domimarket-login.vercel.app/api/auth/discord";
+    });
 });

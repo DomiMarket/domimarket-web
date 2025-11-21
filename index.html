@@ -8,18 +8,30 @@
 </head>
 <body>
 
-    <!-- Hero -->
-    <header class="hero">
-        <div class="hero-content">
-            <img src="https://i.postimg.cc/Z5ZTtjpT/Gemini-Generated-Image-6bppp06bppp06bpp.png" alt="DomiMarket Logo" class="logo">
-            <h1>DomiMarket</h1>
-            <p>Recursos exclusivos de MTA. ¡Todo lo que necesitas al alcance de un click!</p>
-            <a href="#login" class="login-btn">Iniciar sesión con Discord</a>
+    <!-- Header / Navbar -->
+    <header class="navbar">
+        <div class="logo-nav">
+            <img src="https://i.postimg.cc/Z5ZTtjpT/Gemini-Generated-Image-6bppp06bppp06bpp.png" alt="Logo" class="nav-logo">
+            <nav>
+                <a href="#hero">Inicio</a>
+                <a href="#products">Productos</a>
+                <a href="#footer">Contacto</a>
+            </nav>
         </div>
+        <a href="#login" class="login-btn-header">Iniciar sesión</a>
     </header>
 
+    <!-- Hero -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <h1>DomiMarket</h1>
+            <p>Recursos exclusivos de MTA. Todo lo que necesitas al alcance de un click!</p>
+            <a href="#login" class="login-btn">Iniciar sesión con Discord</a>
+        </div>
+    </section>
+
     <!-- Productos destacados -->
-    <section class="products">
+    <section class="products" id="products">
         <h2>Recursos Destacados</h2>
         <div class="product-list">
             <div class="product-card">
@@ -37,24 +49,8 @@
         </div>
     </section>
 
-    <!-- Estadísticas -->
-    <section class="stats">
-        <div class="stat">
-            <h3>+500</h3>
-            <p>Clientes felices</p>
-        </div>
-        <div class="stat">
-            <h3>+1200</h3>
-            <p>Recursos descargados</p>
-        </div>
-        <div class="stat">
-            <h3>+80</h3>
-            <p>Nuevos recursos mensuales</p>
-        </div>
-    </section>
-
-    <!-- Footer simple -->
-    <footer>
+    <!-- Footer -->
+    <footer id="footer">
         <p>&copy; 2025 DomiMarket. Todos los derechos reservados.</p>
     </footer>
 
