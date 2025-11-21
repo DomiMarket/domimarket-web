@@ -5,136 +5,139 @@
     box-sizing: border-box;
 }
 
-/* Fuente y body */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f5f5f5;
-    scroll-behavior: smooth; /* scroll suave */
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f4ff;
+    scroll-behavior: smooth;
 }
 
 /* Hero */
 .hero {
     height: 100vh;
+    background: linear-gradient(135deg, #4e54c8, #6f86d6);
+    color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, #4e54c8, #8f94fb);
     text-align: center;
-    color: #fff;
+    flex-direction: column;
+    padding: 20px;
 }
 
 .hero .logo {
-    max-width: 160px;
+    width: 180px;
     margin-bottom: 20px;
-    animation: logo-appear 1s ease forwards;
+    border-radius: 50%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    animation: logo-fade 1s ease forwards;
 }
 
 .hero h1 {
-    font-size: 36px;
+    font-size: 48px;
     margin-bottom: 10px;
     animation: fade-slide 1s ease forwards;
-    animation-delay: 0.3s;
 }
 
 .hero p {
-    font-size: 18px;
+    font-size: 20px;
     margin-bottom: 25px;
+    max-width: 600px;
     animation: fade-slide 1s ease forwards;
-    animation-delay: 0.6s;
 }
 
 .login-btn {
     display: inline-block;
     background-color: #5865F2;
-    color: white;
-    padding: 14px 28px;
-    border-radius: 10px;
+    color: #fff;
+    padding: 16px 32px;
+    border-radius: 12px;
     text-decoration: none;
     font-size: 18px;
+    font-weight: bold;
     transition: all 0.3s ease;
-    animation: fade-slide 1s ease forwards;
-    animation-delay: 0.9s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 .login-btn:hover {
     background-color: #4752c4;
-    transform: scale(1.05);
+    transform: scale(1.1) rotate(-2deg);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
 }
 
 /* Productos */
 .products {
-    padding: 60px 20px;
+    padding: 80px 20px;
     text-align: center;
+    background: #fff;
 }
 
 .products h2 {
-    font-size: 28px;
-    margin-bottom: 30px;
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #4e54c8;
 }
 
 .product-list {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
     flex-wrap: wrap;
 }
 
 .product-card {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    width: 250px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: linear-gradient(135deg, #6f86d6, #48c6ef);
+    color: #fff;
+    padding: 25px;
+    border-radius: 20px;
+    width: 280px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
 }
 
 .product-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    transform: translateY(-10px) rotate(-1deg);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
 }
 
 /* Estadísticas */
 .stats {
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: 50px;
     padding: 60px 20px;
-    background-color: #eee;
-    text-align: center;
+    background-color: #f0f4ff;
     flex-wrap: wrap;
+    text-align: center;
 }
 
 .stat h3 {
-    font-size: 32px;
+    font-size: 40px;
     color: #4e54c8;
     margin-bottom: 10px;
 }
 
 .stat p {
-    font-size: 16px;
-    color: #555;
+    font-size: 18px;
+    color: #333;
+}
+
+/* Footer */
+footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #4e54c8;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
 }
 
 /* Animaciones */
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1s forwards;
-}
-
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes logo-appear {
-    from { opacity: 0; transform: scale(0.5);}
-    to { opacity: 1; transform: scale(1);}
-}
-
 @keyframes fade-slide {
-    from { opacity: 0; transform: translateY(20px);}
-    to { opacity: 1; transform: translateY(0);}
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes logo-fade {
+    from {opacity: 0; transform: scale(0.5);}
+    to {opacity: 1; transform: scale(1);}
 }
