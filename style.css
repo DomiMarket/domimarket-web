@@ -90,8 +90,6 @@ body {
     opacity: 0;
     animation: slideInFromTop 0.8s ease-out 1.2s forwards; 
 }
-/* ... (Se mantienen otros estilos del Hero) ... */
-
 
 /* -------------------- SECCIÓN: MÉTRICAS -------------------- */
 .metrics-section {
@@ -164,7 +162,6 @@ body {
     transform: translateY(-10px) scale(1.03); 
     box-shadow: 0 10px 25px rgba(30, 144, 255, 0.5); 
 }
-/* ... (Resto de estilos de productos, botones, footer) ... */
 
 /* -------------------- Seccion Contacto -------------------- */
 .contact {

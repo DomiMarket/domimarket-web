@@ -4,11 +4,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const buyButtons = document.querySelectorAll('.buy-btn');
 
     // ** URL FINAL CORREGIDA para el flujo de Discord **
-    // Apunta a callback.html para evitar errores de servidor.
     const DISCORD_AUTH_URL = 
         'https://discord.com/api/oauth2/authorize?' +
         'client_id=1438645485773652241' + 
-        '&redirect_uri=https%3A%2F%2Fdomimarket.github.io%2Fdomimarket-web%2Fcallback.html' + // URI final
+        '&redirect_uri=https%3A%2F%2Fdomimarket.github.io%2Fdomimarket-web%2Fcallback.html' + 
         '&response_type=code' + 
         '&scope=identify'; 
     
