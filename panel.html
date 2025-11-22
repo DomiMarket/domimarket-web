@@ -1,26 +1,14 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DomiMarket - Panel de Usuario</title>
-    <link rel="stylesheet" href="style.css"> </head>
-<body>
-    <header class="panel-header">
-        <h1>Panel de Usuario</h1>
-        <div class="panel-nav">
-            <a href="index.html" class="panel-btn">Inicio</a>
-            <button id="logoutPanelBtn" class="panel-btn logout-btn">Salir</button>
-        </div>
-    </header>
+<script>
+        // Capturamos el botón Salir del panel
+        const logoutBtn = document.getElementById('logoutPanelBtn');
 
-    <section class="products-dashboard">
-        <h2>Mis Productos Adquiridos</h2>
-        <p>Aquí se listarán los productos comprados por el usuario.</p>
-    </section>
-
-    <script>
-        // Lógica de Salir (Logout)
+        logoutBtn.addEventListener('click', () => {
+            // 1. Borrar el estado de login en localStorage
+            localStorage.removeItem('domimarket_auth');
+            
+            // 2. Redirigir a la página principal, donde aparecerá "Iniciar Sesión"
+            window.location.href = 'index.html'; 
+        });
     </script>
 </body>
 </html>
