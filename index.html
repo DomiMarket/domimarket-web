@@ -112,124 +112,340 @@
 
 ---
 
-### 2. 💻 `script.js` (Versión Estable)
+### 2. 🎨 `style.css` (Para el Diseño)
 
-Reemplaza tu `script.js` con esta versión simplificada. Ya no tiene la lógica para el botón "Panel", solo el Login/Logout.
-
-```javascript
+```css
 <blockquote class="not-prose">
-document.addEventListener('DOMContentLoaded', () => {
-    // -------------------- 1. Funcionalidad de Botones y Redirección Discord --------------------
-    const loginButton = document.getElementById('loginBtn');
-    const buyButtons = document.querySelectorAll('.buy-btn');
+/* Base y Reset */
+html {
+    scroll-behavior: smooth; 
+}
 
-    // Estado de login desde localStorage
-    const isLoggedIn = localStorage.getItem('domimarket_auth') === 'true';
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1A2A3A; 
+    color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
 
-    // ** URL FINAL CORREGIDA para el flujo de Discord **
-    const DISCORD_AUTH_URL = 
-        '[https://discord.com/api/oauth2/authorize](https://discord.com/api/oauth2/authorize)?' +
-        'client_id=1438645485773652241' + 
-        '&redirect_uri=https%3A%2F%2Fdomimarket.github.io%2Fdomimarket-web%2Fcallback.html' + 
-        '&response_type=code' + 
-        '&scope=identify'; 
-    
-    // >>> LÓGICA DE VISIBILIDAD DE BOTONES <<<
-    if (isLoggedIn) {
-        // Si está logueado, cambia el botón a "Salir"
-        loginButton.textContent = 'Salir';
-        loginButton.style.backgroundColor = '#FF4500'; 
-        loginButton.style.boxShadow = 'none'; 
-    }
+/* Variables de Color */
+:root {
+    --accent-color: #1E90FF; /* Azul Elegante */
+    --hover-accent-color: #4da6ff;
+}
 
-    // >>> LISTENER DEL BOTÓN DE LOGIN/SALIR <<<
-    if (loginButton) {
-        loginButton.addEventListener('click', () => {
-            if (isLoggedIn) {
-                // Acción de SALIR
-                localStorage.removeItem('domimarket_auth');
-                window.location.reload(); 
-            } else {
-                // Acción de INICIAR SESIÓN
-                window.location.href = DISCORD_AUTH_URL; 
-            }
-        });
-    }
+/* -------------------- KEYFRAMES DE ANIMACIÓN -------------------- */
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideInFromTop { from { transform: translateY(-50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+@keyframes scaleIn { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
 
-    // -------------------- 2. Animaciones Escalonadas (Se mantiene igual) --------------------
-    const navLinks = document.querySelectorAll('.navbar nav a');
-    navLinks.forEach((link, index) => {
-        link.style.setProperty('animation-delay', `${0.6 + index * 0.1}s`); 
-    });
+/* -------------------- Navbar -------------------- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: #101c27; 
+    border-bottom: 1px solid #3d5a76;
+    animation: slideInFromTop 0.8s ease-out forwards; 
+    position: sticky; 
+    top: 0;
+    z-index: 1000;
+}
 
-    const productCards = document.querySelectorAll('.product-card');
-    productCards.forEach((card, index) => {
-        card.style.animationDelay = `${0.3 + index * 0.15}s`; 
-    });
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--accent-color);
+    opacity: 0; 
+    animation: fadeIn 0.8s ease-out 0.5s forwards; 
+}
 
-    // -------------------- 3. Contador Animado para Métricas (Se mantiene igual) --------------------
-    const counterObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const metricNumbers = document.querySelectorAll('.metric-number');
-                metricNumbers.forEach(item => {
-                    const finalValueStr = item.getAttribute('data-target');
-                    let finalValue = parseInt(finalValueStr.replace('+', '').replace('K', '00')); 
-                    
-                    let startValue = 0;
-                    const duration = 2000; 
-                    const stepTime = 10; 
-                    const increment = finalValue / (duration / stepTime);
+.navbar nav a {
+    color: #ccc;
+    text-decoration: none;
+    margin-right: 20px;
+    transition: color 0.3s ease-in-out, transform 0.2s ease-in-out; 
+    opacity: 0; 
+    animation: fadeIn 0.8s ease-out forwards;
+}
 
-                    const timer = setInterval(() => {
-                        startValue += increment;
-                        
-                        if (startValue >= finalValue) {
-                            clearInterval(timer);
-                            item.textContent = finalValueStr; 
-                        } else {
-                            item.textContent = "+" + Math.floor(startValue); 
-                        }
-                    }, stepTime);
-                    
-                    observer.unobserve(entry.target); 
-                });
-            }
-        });
-    }, { threshold: 0.5 });
+.navbar nav a:hover {
+    color: var(--hover-accent-color); 
+    transform: translateY(-2px); 
+}
 
-    const metricsSection = document.querySelector('.metrics-section');
-    if (metricsSection) {
-        counterObserver.observe(metricsSection);
-    }
-    // -------------------- FIN del Contador --------------------
-});
+.login-btn {
+    background-color: var(--accent-color); 
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    opacity: 0; 
+    animation: scaleIn 0.6s ease-out 1s forwards; 
+}
+
+.login-btn:hover {
+    background-color: var(--hover-accent-color);
+    transform: scale(1.05); 
+}
+
+/* -------------------- Hero Section -------------------- */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background-image: url('[https://i.postimg.cc/FKy6d5Y5/Gemini-Generated-Image-6bppp06bppp06bpp.png](https://i.postimg.cc/FKy6d5Y5/Gemini-Generated-Image-6bppp06bppp06bpp.png)');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    min-height: 500px;
+    position: relative; 
+    z-index: 1; 
+}
+
+/* Capa oscura para contraste (detrás del texto) */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); 
+    z-index: -1; 
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    opacity: 0;
+    animation: slideInFromTop 0.8s ease-out 1.2s forwards; 
+    text-shadow: 0 0 10px #000; 
+}
+
+.hero p {
+    font-size: 20px; 
+    margin-bottom: 30px;
+    text-shadow: 0 0 8px #000; 
+}
+
+/* --- Botones de la Sección Hero --- */
+.hero-buttons {
+    margin-top: 30px;
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out 1.5s forwards;
+}
+
+.primary-btn, .secondary-btn {
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin: 0 10px;
+}
+
+.primary-btn {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 15px rgba(30, 144, 255, 0.4);
+}
+
+.secondary-btn {
+    background-color: transparent;
+    color: var(--accent-color);
+    border: 2px solid var(--accent-color);
+}
+
+/* >>> EFECTOS HOVER (BRILLO) <<< */
+.primary-btn:hover {
+    background-color: var(--hover-accent-color);
+    transform: translateY(-2px); 
+    box-shadow: 0 8px 20px rgba(30, 144, 255, 0.8); 
+}
+
+.secondary-btn:hover {
+    background-color: rgba(30, 144, 255, 0.1); 
+    color: white; 
+    border-color: var(--hover-accent-color);
+    box-shadow: 0 0 15px rgba(30, 144, 255, 0.8); 
+    transform: translateY(-2px);
+}
+
+/* -------------------- SECCIÓN: MÉTRICAS -------------------- */
+.metrics-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px 20px;
+    background-color: #101c27;
+    margin: 0;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    animation: fadeIn 1s ease-out 2.2s forwards;
+}
+
+.metric-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.metric-number {
+    font-size: 36px;
+    font-weight: bold;
+    color: var(--accent-color); 
+    margin-bottom: 5px;
+}
+
+.metric-label {
+    font-size: 14px;
+    color: #ccc;
+    text-transform: uppercase;
+}
+
+/* -------------------- Featured Products -------------------- */
+.featured-products {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.featured-products h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: var(--accent-color);
+    opacity: 0;
+    animation: fadeIn 1s ease-out 0.2s forwards;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px; 
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
+}
+
+.product-card {
+    background-color: #101c27; 
+    border-radius: 10px;
+    overflow: hidden;
+    padding-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    opacity: 0; 
+    animation: scaleIn 0.7s ease-out forwards;
+}
+
+.product-card:hover {
+    transform: translateY(-10px) scale(1.03); 
+    box-shadow: 0 10px 25px rgba(30, 144, 255, 0.5); 
+}
+
+.product-image {
+    height: 180px;
+    background-color: #3d5a76;
+    margin-bottom: 15px;
+}
+
+.product-card h3 {
+    margin: 0 0 5px 0;
+    color: var(--accent-color);
+}
+
+.product-card .description {
+    font-size: 14px;
+    color: #ccc;
+    padding: 0 20px;
+    min-height: 40px;
+}
+
+.product-card .price {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.card-actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 0 20px;
+}
+
+.card-actions button {
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.detail-btn {
+    background-color: #3d5a76;
+    color: white;
+}
+
+.buy-btn {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.load-more-btn {
+    background-color: transparent;
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+    padding: 10px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+    margin-top: 20px;
+}
+
+.load-more-btn:hover {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+/* -------------------- Seccion Contacto -------------------- */
+.contact {
+    text-align: center; 
+    padding: 150px 50px; 
+    color: #fff;
+}
+
+.contact h2 {
+    font-size: 32px;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+}
+
+/* -------------------- Footer -------------------- */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #101c27;
+    font-size: 14px;
+    color: #ccc;
+}
 </blockquote>
 
 ---
 
-### 3. 📄 `callback.html` (Redirección Secreta)
+El código de los archivos `index.html` y `style.css` está correcto y estable. Si el inicio de sesión no funciona, la única causa restante es la configuración externa de Discord.
 
-Esta página debe quedarse igual, ya que fue la que arregló el flujo de retorno del login.
+El botón **"Iniciar Sesión"** solo puede fallar si:
+1.  **La URL de redirección en Discord está incorrecta.** 🔗
 
-```html
-<blockquote class="not-prose">
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirigiendo...</title>
-    
-    <script>
-        // 1. Guardar el estado de login en localStorage
-        localStorage.setItem('domimarket_auth', 'true');
-
-        // 2. Redirigir a la página principal inmediatamente
-        window.location.href = 'index.html';
-    </script>
-</head>
-<body>
-    </body>
-</html>
-</blockquote>
+¿Puedes verificar por última vez que en el Portal de Desarrolladores de Discord, la URL de redirección (Redirect URI) esté configurada **exactamente** con esta dirección?
