@@ -16,7 +16,7 @@ body {
 
 /* Variables de Color */
 :root {
-    --accent-color: #1E90FF; /* Azul Elegante */
+    --accent-color: #1E90FF;
     --hover-accent-color: #4da6ff;
 }
 
@@ -200,7 +200,7 @@ body {
 
 /* -------------------- Estilo para el Encabezado de la Página de Productos -------------------- */
 .products-page-header {
-    text-align: left; /* Títulos alineados a la izquierda para un look de tienda */
+    text-align: left; 
     padding: 50px 50px 20px 50px;
     background-color: #1A2A3A; 
 }
@@ -218,8 +218,6 @@ body {
 
 .product-layout {
     display: flex; 
-    /* Breadcrumb - Esto lo mantendríamos en el HTML, pero es bueno tener en cuenta la estructura */
-    
     max-width: 1400px;
     margin: 40px auto;
     padding: 0 20px;
@@ -227,12 +225,12 @@ body {
 }
 
 .sidebar {
-    width: 250px; /* Ancho fijo para el filtro */
+    width: 250px; 
     flex-shrink: 0;
     background-color: #101c27; 
     padding: 20px;
     border-radius: 8px;
-    height: fit-content; /* Para que solo ocupe el espacio de su contenido */
+    height: fit-content; 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -258,27 +256,26 @@ body {
 
 
 .main-content {
-    flex-grow: 1; /* Permite que el contenido principal ocupe el resto del espacio */
+    flex-grow: 1; 
 }
 
 
 /* -------------------- Featured Products (Ajustado al nuevo layout) -------------------- */
 .featured-products {
-    padding: 0; /* Quitamos el padding superior, ya que está dentro del main-content */
-    text-align: left; /* Alineamos el texto a la izquierda para un look de tienda */
+    padding: 0; 
+    text-align: left; 
 }
 
 .featured-products h2 {
-    text-align: center; /* Mantenemos el título del h2 centrado si no usamos h1 */
+    text-align: center; 
     margin-bottom: 30px;
 }
 
 .product-grid {
     display: grid;
-    /* Ajustamos el tamaño de las tarjetas para que quepan mejor al lado del sidebar */
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
     gap: 25px; 
-    max-width: none; /* Quitamos el límite para que se ajuste al main-content */
+    max-width: none; 
     margin: 0;
 }
 
@@ -291,11 +288,11 @@ body {
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     opacity: 0; 
     animation: scaleIn 0.7s ease-out forwards;
-    text-align: center; /* Centramos el contenido dentro de la tarjeta */
+    text-align: center; 
 }
 
 .product-card:hover {
-    transform: translateY(-5px) scale(1.02); /* Movimiento más sutil */
+    transform: translateY(-5px) scale(1.02); 
     box-shadow: 0 8px 20px rgba(30, 144, 255, 0.4); 
 }
 
@@ -304,8 +301,50 @@ body {
     background-color: #3d5a76;
     margin-bottom: 15px;
 }
-/* ... resto de estilos de tarjetas ... */
 
+.product-card h3 {
+    margin: 0 0 5px 0;
+    color: var(--accent-color);
+}
+
+.product-card .description {
+    font-size: 14px;
+    color: #ccc;
+    padding: 0 20px;
+    min-height: 40px;
+}
+
+.product-card .price {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.card-actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 0 20px;
+}
+
+.card-actions button {
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.detail-btn {
+    background-color: #3d5a76;
+    color: white;
+}
+
+.buy-btn {
+    background-color: var(--accent-color);
+    color: white;
+}
 
 /* -------------------- Seccion Contacto y Footer -------------------- */
 .contact {
@@ -330,142 +369,6 @@ footer {
 </blockquote>
 
 ---
+**Paso Crítico Final:**
 
-## 2. 📄 Archivo `productos.html` (Estructura de Tienda)
-
-Aquí está la estructura del archivo **`productos.html`** con el nuevo **`sidebar`** (barra lateral).
-
-```html
-<blockquote class="not-prose">
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DomiMarket - Todos los Productos</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-    <header class="navbar">
-        <div class="logo">DomiMarket</div>
-        <nav>
-            <a href="index.html">Inicio</a>
-            <a href="productos.html">Productos</a> 
-            <a href="index.html#contact-section">Contacto</a>
-            <button class="login-btn" id="loginBtn">Iniciar Sesión</button>
-        </nav>
-    </header>
-
-    <section class="products-page-header">
-        <h1>Explora todos nuestros recursos</h1>
-        <p>Modelos, Scripts y más contenido premium a tu disposición.</p>
-    </section>
-
-    <div class="product-layout">
-        
-        <aside class="sidebar">
-            <h3>Categorías</h3>
-            <ul>
-                <li><a href="#">Scripts</a></li>
-                <li><a href="#">Modelos (3D)</a></li>
-                <li><a href="#">Texturas</a></li>
-                <li><a href="#">Mapas</a></li>
-            </ul>
-
-            <h3>Precios</h3>
-            <ul>
-                <li><a href="#">Gratis</a></li>
-                <li><a href="#">Menos de $5.00</a></li>
-                <li><a href="#">$5.00 - $15.00</a></li>
-                <li><a href="#">Premium ($15.00+)</a></li>
-            </ul>
-        </aside>
-        
-        <div class="main-content">
-            <section class="featured-products">
-                
-                <div class="product-grid">
-                    <div class="product-card">
-                        <div class="product-image"></div>
-                        <h3>Apartamentos</h3>
-                        <p class="description">Apartamentos estilo caserío, texturas editables.</p>
-                        <p class="price">$0.00 (GRATIS)</p>
-                        <div class="card-actions">
-                            <button class="detail-btn">Detalles</button>
-                            <button class="buy-btn">Comprar</button>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <div class="product-image"></div>
-                        <h3>Inventario Completo</h3>
-                        <p class="description">Sistema de Inventario completo para Roleplay.</p>
-                        <p class="price">$16.00</p>
-                        <div class="card-actions">
-                            <button class="detail-btn">Detalles</button>
-                            <button class="buy-btn">Comprar</button>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <div class="product-image"></div>
-                        <h3>Plano Ilimitado</h3>
-                        <p class="description">Plano Ilimitado acceso mensual a todos los productos de la tienda.</p>
-                        <p class="price">$10.00</p>
-                        <div class="card-actions">
-                            <button class="detail-btn">Detalles</button>
-                            <button class="buy-btn">Comprar</button>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <div class="product-image"></div>
-                        <h3>Music Studio</h3>
-                        <p class="description">Estudio de Música moderno y exclusivo en la ciudad.</p>
-                        <p class="price">$7.00</p>
-                        <div class="card-actions">
-                            <button class="detail-btn">Detalles</button>
-                            <button class="buy-btn">Comprar</button>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <div class="product-image"></div>
-                        <h3>(Nuevo Producto 5)</h3>
-                        <p class="description">Aquí va la descripción del producto 5.</p>
-                        <p class="price">$5.00</p>
-                        <div class="card-actions">
-                            <button class="detail-btn">Detalles</button>
-                            <button class="buy-btn">Comprar</button>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <div class="product-image"></div>
-                        <h3>(Nuevo Producto 6)</h3>
-                        <p class="description">Aquí va la descripción del producto 6.</p>
-                        <p class="price">$12.00</p>
-                        <div class="card-actions">
-                            <button class="detail-btn">Detalles</button>
-                            <button class="buy-btn">Comprar</button>
-                        </div>
-                    </div>
-                </div>
-                
-            </section>
-        </div>
-        
-    </div>
-    <footer>
-        <p>&copy; 2024 DomiMarket. Todos los derechos reservados.</p>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
-</blockquote>
-
----
-**Paso Final:**
-
-1.  Guarda los cambios en **`style.css`** (con los nuevos estilos de sidebar).
-2.  Asegúrate de que tu **`productos.html`** se vea como el código de arriba (con la estructura de `div class="product-layout"`).
-3.  ¡Haz la **recarga forzada** de tu `index.html`! (`Ctrl + Shift + R`).
-
-Ahora el botón debe funcionar, y la página de destino (`productos.html`) debe tener el diseño de tienda con barra lateral que pediste.
+Después de reemplazar el `style.css`, **debes hacer una recarga forzada** de la página de nuevo (`Ctrl + Shift + R`). Esto forzará al navegador a reconocer el archivo de estilos y a pintar el fondo oscuro correctamente.
