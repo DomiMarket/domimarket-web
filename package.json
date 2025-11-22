@@ -6,7 +6,22 @@
     "start": "vercel dev"
   },
   "dependencies": {
-    "node-fetch": "^3.3.2",
-    "jsonwebtoken": "^9.0.0"
-  }
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.0",
+    "node-fetch": "^3.3.2"
+  },
+  "description": "",
+  "main": "script.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DomiMarket/domimarket-web.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DomiMarket/domimarket-web/issues"
+  },
+  "homepage": "https://github.com/DomiMarket/domimarket-web#readme"
 }

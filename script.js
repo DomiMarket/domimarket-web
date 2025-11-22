@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const loginButton = document.getElementById('loginBtn');
     const buyButtons = document.querySelectorAll('.buy-btn');
 
-    // ** URL FINAL CORREGIDA para el flujo de Discord **
+    // ** URL FINAL CORREGIDA para el flujo de Discord (apunta a callback.html en GitHub Pages) **
     const DISCORD_AUTH_URL = 
         'https://discord.com/api/oauth2/authorize?' +
         'client_id=1438645485773652241' + 
