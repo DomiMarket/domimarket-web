@@ -1,23 +1,22 @@
-<blockquote class="not-prose">
-/* Base y Reset */
+style ccs : /* Base y Reset */
 html {
-    scroll-behavior: smooth; 
+    scroll-behavior: smooth; 
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #1A2A3A; 
-    color: #FFFFFF;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    overflow-x: hidden;
+    font-family: 'Arial', sans-serif;
+    background-color: #1A2A3A; 
+    color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
 /* Variables de Color */
 :root {
-    --accent-color: #1E90FF; /* Azul Elegante */
-    --hover-accent-color: #4da6ff;
+    --accent-color: #1E90FF; /* Azul Elegante */
+    --hover-accent-color: #4da6ff;
 }
 
 /* -------------------- KEYFRAMES DE ANIMACIÓN -------------------- */
@@ -27,517 +26,300 @@ body {
 
 /* -------------------- Navbar -------------------- */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 50px;
-    background-color: #101c27; 
-    border-bottom: 1px solid #3d5a76;
-    animation: slideInFromTop 0.8s ease-out forwards; 
-    position: sticky; 
-    top: 0;
-    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: #101c27; 
+    border-bottom: 1px solid #3d5a76;
+    animation: slideInFromTop 0.8s ease-out forwards; 
+    position: sticky; 
+    top: 0;
+    z-index: 1000;
 }
 
 .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: var(--accent-color);
-    opacity: 0; 
-    animation: fadeIn 0.8s ease-out 0.5s forwards; 
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--accent-color);
+    opacity: 0; 
+    animation: fadeIn 0.8s ease-out 0.5s forwards; 
 }
 
 .navbar nav a {
-    color: #ccc;
-    text-decoration: none;
-    margin-right: 20px;
-    transition: color 0.3s ease-in-out, transform 0.2s ease-in-out; 
-    opacity: 0; 
-    animation: fadeIn 0.8s ease-out forwards;
+    color: #ccc;
+    text-decoration: none;
+    margin-right: 20px;
+    transition: color 0.3s ease-in-out, transform 0.2s ease-in-out; 
+    opacity: 0; 
+    animation: fadeIn 0.8s ease-out forwards;
 }
 
 .navbar nav a:hover {
-    color: var(--hover-accent-color); 
-    transform: translateY(-2px); 
+    color: var(--hover-accent-color); 
+    transform: translateY(-2px); 
 }
 
 .login-btn {
-    background-color: var(--accent-color); 
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
-    opacity: 0; 
-    animation: scaleIn 0.6s ease-out 1s forwards; 
+    background-color: var(--accent-color); 
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    opacity: 0; 
+    animation: scaleIn 0.6s ease-out 1s forwards; 
 }
 
 .login-btn:hover {
-    background-color: var(--hover-accent-color);
-    transform: scale(1.05); 
+    background-color: var(--hover-accent-color);
+    transform: scale(1.05); 
 }
 
 /* -------------------- Hero Section (¡Fondo Futurista Aquí!) -------------------- */
 .hero {
-    text-align: center;
-    padding: 80px 20px;
-    background-image: url('https://i.postimg.cc/FKy6d5Y5/Gemini-Generated-Image-6bppp06bppp06bpp.png');
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat; 
-    min-height: 500px;
-    position: relative; 
-    z-index: 1; 
+    text-align: center;
+    padding: 80px 20px;
+    /* >>> ESTILOS DE FONDO FUTRONES: <<< */
+    background-image: url('https://i.postimg.cc/FKy6d5Y5/Gemini-Generated-Image-6bppp06bppp06bpp.png');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    min-height: 500px;
+    position: relative; 
+    z-index: 1; 
 }
 
 /* Capa oscura para contraste (detrás del texto) */
 .hero::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); 
-    z-index: -1; 
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); 
+    z-index: -1; 
 }
 
 .hero h1 {
-    font-size: 48px;
-    margin-bottom: 10px;
-    opacity: 0;
-    animation: slideInFromTop 0.8s ease-out 1.2s forwards; 
-    text-shadow: 0 0 10px #000; 
+    font-size: 48px;
+    margin-bottom: 10px;
+    opacity: 0;
+    animation: slideInFromTop 0.8s ease-out 1.2s forwards; 
+    text-shadow: 0 0 10px #000; /* Sombra para resaltar */
 }
 
 .hero p {
-    font-size: 20px; 
-    margin-bottom: 30px;
-    text-shadow: 0 0 8px #000; 
+    font-size: 20px; /* Hacemos el texto más grande */
+    margin-bottom: 30px;
+    text-shadow: 0 0 8px #000; /* Sombra para contraste */
 }
 
 /* --- Botones de la Sección Hero --- */
 .hero-buttons {
-    margin-top: 30px;
-    opacity: 0;
-    animation: fadeIn 0.8s ease-out 1.5s forwards;
+    margin-top: 30px;
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out 1.5s forwards;
 }
 
 .primary-btn, .secondary-btn {
-    padding: 12px 25px;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    margin: 0 10px; 
-    display: inline-block; 
-    text-decoration: none; 
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin: 0 10px;
 }
 
 .primary-btn {
-    background-color: var(--accent-color);
-    color: white;
-    border: none;
-    box-shadow: 0 4px 15px rgba(30, 144, 255, 0.4);
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 15px rgba(30, 144, 255, 0.4);
 }
 
 .secondary-btn {
-    background-color: transparent;
-    color: var(--accent-color);
-    border: 2px solid var(--accent-color);
+    background-color: transparent;
+    color: var(--accent-color);
+    border: 2px solid var(--accent-color);
 }
 
 /* >>> EFECTOS HOVER (BRILLO) <<< */
 .primary-btn:hover {
-    background-color: var(--hover-accent-color);
-    transform: translateY(-2px); 
-    box-shadow: 0 8px 20px rgba(30, 144, 255, 0.8); 
+    background-color: var(--hover-accent-color);
+    transform: translateY(-2px); 
+    box-shadow: 0 8px 20px rgba(30, 144, 255, 0.8); /* Brillo intenso */
 }
 
 .secondary-btn:hover {
-    background-color: rgba(30, 144, 255, 0.1); 
-    color: white; 
-    border-color: var(--hover-accent-color);
-    box-shadow: 0 0 15px rgba(30, 144, 255, 0.8); 
-    transform: translateY(-2px);
+    background-color: rgba(30, 144, 255, 0.1); /* Fondo muy sutil */
+    color: white; /* Resalta el texto */
+    border-color: var(--hover-accent-color);
+    box-shadow: 0 0 15px rgba(30, 144, 255, 0.8); /* Brillo con sombra */
+    transform: translateY(-2px);
 }
 
 /* -------------------- SECCIÓN: MÉTRICAS -------------------- */
 .metrics-section {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 40px 20px;
-    background-color: #101c27;
-    margin: 0;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    opacity: 0;
-    animation: fadeIn 1s ease-out 2.2s forwards;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px 20px;
+    background-color: #101c27;
+    margin: 0;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    animation: fadeIn 1s ease-out 2.2s forwards;
 }
 
 .metric-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
 }
 
 .metric-number {
-    font-size: 36px;
-    font-weight: bold;
-    color: var(--accent-color); 
-    margin-bottom: 5px;
+    font-size: 36px;
+    font-weight: bold;
+    color: var(--accent-color); 
+    margin-bottom: 5px;
 }
 
 .metric-label {
-    font-size: 14px;
-    color: #ccc;
-    text-transform: uppercase;
+    font-size: 14px;
+    color: #ccc;
+    text-transform: uppercase;
 }
 
 /* -------------------- Featured Products -------------------- */
 .featured-products {
-    padding: 50px 20px;
-    text-align: center;
+    padding: 50px 20px;
+    text-align: center;
 }
 
 .featured-products h2 {
-    font-size: 32px;
-    margin-bottom: 40px;
-    color: var(--accent-color);
-    opacity: 0;
-    animation: fadeIn 1s ease-out 0.2s forwards;
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: var(--accent-color);
+    opacity: 0;
+    animation: fadeIn 1s ease-out 0.2s forwards;
 }
 
 .product-grid {
-    display: grid;
-    /* CORRECCIÓN FINAL: Layout de productos como el original (300px) */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-    gap: 30px; 
-    max-width: 1200px;
-    margin: 0 auto 40px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px; 
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
 }
 
 .product-card {
-    background-color: #101c27; 
-    border-radius: 10px;
-    overflow: hidden;
-    padding-bottom: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    opacity: 0; 
-    animation: scaleIn 0.7s ease-out forwards;
+    background-color: #101c27; 
+    border-radius: 10px;
+    overflow: hidden;
+    padding-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    opacity: 0; 
+    animation: scaleIn 0.7s ease-out forwards;
 }
 
 .product-card:hover {
-    transform: translateY(-10px) scale(1.03); 
-    box-shadow: 0 10px 25px rgba(30, 144, 255, 0.5); 
+    transform: translateY(-10px) scale(1.03); 
+    box-shadow: 0 10px 25px rgba(30, 144, 255, 0.5); 
 }
 
 .product-image {
-    height: 180px;
-    background-color: #3d5a76;
-    margin-bottom: 15px;
+    /* Aquí iría la imagen del producto, por ahora es un placeholder */
+    height: 180px;
+    background-color: #3d5a76;
+    margin-bottom: 15px;
 }
 
 .product-card h3 {
-    margin: 0 0 5px 0;
-    color: var(--accent-color);
+    margin: 0 0 5px 0;
+    color: var(--accent-color);
 }
 
 .product-card .description {
-    font-size: 14px;
-    color: #ccc;
-    padding: 0 20px;
-    min-height: 40px;
+    font-size: 14px;
+    color: #ccc;
+    padding: 0 20px;
+    min-height: 40px;
 }
 
 .product-card .price {
-    font-size: 20px;
-    font-weight: bold;
-    margin: 15px 0;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 15px 0;
 }
 
 .card-actions {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 0 20px;
 }
 
 .card-actions button {
-    padding: 8px 15px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s;
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
 }
 
 .detail-btn {
-    background-color: #3d5a76;
-    color: white;
+    background-color: #3d5a76;
+    color: white;
 }
 
 .buy-btn {
-    background-color: var(--accent-color);
-    color: white;
+    background-color: var(--accent-color);
+    color: white;
 }
 
 .load-more-btn {
-    background-color: transparent;
-    border: 2px solid var(--accent-color);
-    color: var(--accent-color);
-    padding: 10px 30px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s, color 0.3s;
-    margin-top: 20px;
+    background-color: transparent;
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+    padding: 10px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+    margin-top: 20px;
 }
 
 .load-more-btn:hover {
-    background-color: var(--accent-color);
-    color: white;
+    background-color: var(--accent-color);
+    color: white;
 }
 
 /* -------------------- Seccion Contacto -------------------- */
 .contact {
-    text-align: center; 
-    padding: 150px 50px; 
-    color: #fff;
+    text-align: center; 
+    padding: 150px 50px; 
+    color: #fff;
 }
 
 .contact h2 {
-    font-size: 32px;
-    color: var(--accent-color);
-    margin-bottom: 15px;
+    font-size: 32px;
+    color: var(--accent-color);
+    margin-bottom: 15px;
 }
 
 /* -------------------- Footer -------------------- */
 footer {
-    text-align: center;
-    padding: 20px 0;
-    background-color: #101c27;
-    font-size: 14px;
-    color: #ccc;
+    text-align: center;
+    padding: 20px 0;
+    background-color: #101c27;
+    font-size: 14px;
+    color: #ccc;
 }
-</blockquote>
-
----
-
-## 2. 🔗 Archivo `index.html` (Con Discord Funcionando)
-
-Este archivo no ha cambiado desde la última vez, pero te lo doy de nuevo para que tengas la certeza de que está 100% correcto y el botón de Discord funciona:
-
-```html
-<blockquote class="not-prose">
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DomiMarket - Tu tienda de recursos</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-    <header class="navbar">
-        <div class="logo">DomiMarket</div>
-        <nav>
-            <a href="#hero-section">Inicio</a>
-            <a href="#products-section">Productos</a> 
-            <a href="#contact-section">Contacto</a>
-            <button class="login-btn" id="loginBtn">Iniciar Sesión</button>
-        </nav>
-    </header>
-
-    <section class="hero" id="hero-section">
-        <h1>Bienvenido a DomiMarket</h1>
-        <p>Tu fuente de Models y Scripts premium para MTA. Lleva tu servidor al siguiente nivel con contenido único, funcional y de alta calidad.</p>
-        <div class="hero-buttons">
-            <button class="primary-btn">Ver Recursos</button>
-            <a href="[https://discord.gg/47PJtJdWHB](https://discord.gg/47PJtJdWHB)" target="_blank" class="secondary-btn">Discord</a>
-        </div>
-    </section>
-    
-    <section class="metrics-section">
-        <div class="metric-item">
-            <span class="metric-number" data-target="350">+350</span>
-            <span class="metric-label">Clientes Satisfechos</span>
-        </div>
-        <div class="metric-item">
-            <span class="metric-number" data-target="45">+45</span>
-            <span class="metric-label">Productos Exclusivos</span>
-        </div>
-        <div class="metric-item">
-            <span class="metric-number" data-target="1500">+1.5K</span>
-            <span class="metric-label">Ventas Entregadas</span>
-        </div>
-    </section>
-    
-    <hr>
-
-    <section class="featured-products" id="products-section">
-        <h2>Productos Destacados</h2>
-        
-        <div class="product-grid">
-            <div class="product-card">
-                <div class="product-image"></div>
-                <h3>Apartamentos</h3>
-                <p class="description">Apartamentos estilo caserío, texturas editables.</p>
-                <p class="price">$0.00 (GRATIS)</p>
-                <div class="card-actions">
-                    <button class="detail-btn">Detalles</button>
-                    <button class="buy-btn">Comprar</button>
-                </div>
-            </div>
-            <div class="product-card">
-                <div class="product-image"></div>
-                <h3>Inventario Completo</h3>
-                <p class="description">Sistema de Inventario completo para Roleplay.</p>
-                <p class="price">$16.00</p>
-                <div class="card-actions">
-                    <button class="detail-btn">Detalles</button>
-                    <button class="buy-btn">Comprar</button>
-                </div>
-            </div>
-            <div class="product-card">
-                <div class="product-image"></div>
-                <h3>Plano Ilimitado</h3>
-                <p class="description">Plano Ilimitado acceso mensual a todos los productos de la tienda.</p>
-                <p class="price">$10.00</p>
-                <div class="card-actions">
-                    <button class="detail-btn">Detalles</button>
-                    <button class="buy-btn">Comprar</button>
-                </div>
-            </div>
-            <div class="product-card">
-                <div class="product-image"></div>
-                <h3>Music Studio</h3>
-                <p class="description">Estudio de Música moderno y exclusivo en la ciudad.</p>
-                <p class="price">$7.00</p>
-                <div class="card-actions">
-                    <button class="detail-btn">Detalles</button>
-                    <button class="buy-btn">Comprar</button>
-                </div>
-            </div>
-        </div>
-        
-        <button class="load-more-btn">Ver Todos los Productos</button>
-    </section>
-
-    <hr>
-    
-    <section class="contact" id="contact-section">
-        <h2>Contacto y Soporte</h2>
-        <p>¡Contáctanos a través de Discord o utiliza nuestro formulario de soporte!</p>
-    </section>
-    <hr>
-
-    <footer>
-        <p>&copy; 2024 DomiMarket. Todos los derechos reservados.</p>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
-</blockquote>
-
----
-
-## 3. 🔑 Archivo `script.js` (Lógica de Login y Contadores)
-
-Finalmente, el archivo de lógica JavaScript que tampoco requiere cambios:
-
-```javascript
-<blockquote class="not-prose">
-document.addEventListener('DOMContentLoaded', () => {
-    // -------------------- 1. Funcionalidad de Botones y Redirección Discord --------------------
-    const loginButton = document.getElementById('loginBtn');
-    
-    // Estado de login desde localStorage
-    const isLoggedIn = localStorage.getItem('domimarket_auth') === 'true';
-
-    // ** URL FINAL CORRECTA Y ESTABLE (Debe coincidir con Discord Developer Portal) **
-    const DISCORD_AUTH_URL = 
-        'https://discord.com/api/oauth2/authorize?' +
-        'client_id=1438645485773652241' + 
-        '&redirect_uri=https%3A%2F%2Fdomimarket.github.io%2Fdomimarket-web%2Fcallback.html' + 
-        '&response_type=code' + 
-        '&scope=identify'; 
-    
-    // >>> LÓGICA DE VISIBILIDAD DE BOTONES <<<
-    if (isLoggedIn) {
-        loginButton.textContent = 'Salir';
-        loginButton.style.backgroundColor = '#FF4500'; 
-        loginButton.style.boxShadow = 'none'; 
-    }
-
-    // >>> LISTENER DEL BOTÓN DE LOGIN/SALIR <<<
-    if (loginButton) {
-        loginButton.addEventListener('click', () => {
-            if (isLoggedIn) {
-                // Acción de SALIR
-                localStorage.removeItem('domimarket_auth');
-                window.location.reload(); 
-            } else {
-                // Acción de INICIAR SESIÓN
-                // Redirige a Discord (callback.html hará el trabajo de login)
-                window.location.href = DISCORD_AUTH_URL; 
-            }
-        });
-    }
-
-    // -------------------- 2. Contador Animado --------------------
-    const counterObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const metricNumbers = document.querySelectorAll('.metric-number');
-                metricNumbers.forEach(item => {
-                    const finalValueStr = item.getAttribute('data-target');
-                    // Conversión: '+1.5K' -> 1500, '350' -> 350
-                    let finalValue = parseInt(finalValueStr.replace('+', '').replace('K', '00')); 
-                    
-                    let startValue = 0;
-                    const duration = 2000; 
-                    const stepTime = 10; 
-                    const increment = finalValue / (duration / stepTime);
-
-                    const timer = setInterval(() => {
-                        startValue += increment;
-                        
-                        if (startValue >= finalValue) {
-                            clearInterval(timer);
-                            item.textContent = finalValueStr; 
-                        } else {
-                            item.textContent = "+" + Math.floor(startValue); 
-                        }
-                    }, stepTime);
-                    
-                    observer.unobserve(entry.target); 
-                });
-            }
-        });
-    }, { threshold: 0.5 });
-
-    const metricsSection = document.querySelector('.metrics-section');
-    if (metricsSection) {
-        counterObserver.observe(metricsSection);
-    }
-});
-</blockquote>
-
-***
-
-### 🚩 ¡CONFIRMACIÓN FINAL!
-
-**¡Por favor!** Después de reemplazar los archivos, haz una **recarga forzada de la página** en tu navegador para asegurar que el caché no te muestre el diseño viejo:
-
-* **Windows/Linux:** `Ctrl + Shift + R`
-* **Mac:** `Cmd + Shift + R`
-
-Ahora sí, **tu página debe estar 100% correcta** con el botón de Discord funcionando y el layout de los productos como lo querías.
