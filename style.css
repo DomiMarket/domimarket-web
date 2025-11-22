@@ -131,8 +131,8 @@ body {
     font-weight: bold;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
-    /* AJUSTE AQUI: Se redujo el margen para juntar los botones */
-    margin: 0 8px; 
+    /* REVERTIDO: Se volvió al margen de 10px para la separación original */
+    margin: 0 10px; 
     display: inline-block; 
     text-decoration: none; 
 }
@@ -215,8 +215,8 @@ body {
 
 .product-grid {
     display: grid;
-    /* AJUSTE AQUI: Se redujo el minwidth a 250px para un diseño más compacto */
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    /* REVERTIDO: Se volvió al minwidth de 300px para el layout original */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
     gap: 30px; 
     max-width: 1200px;
     margin: 0 auto 40px auto;
@@ -328,4 +328,4 @@ footer {
 }
 </blockquote>
 
-**Paso Final:** Guarda el archivo **`style.css`** y haz una **recarga forzada** en tu navegador (`Ctrl + Shift + R`). ¡Dime cómo se ve ahora!
+**Paso Final:** Guarda el archivo **`style.css`** y haz una **recarga forzada** en tu navegador (`Ctrl + Shift + R`). Esto debería restaurar el diseño que te gustaba y mantener el botón de Discord funcional. ¡Dime si ahora sí está todo perfecto! 👍
