@@ -1,11 +1,11 @@
 /* Base y Reset */
 html {
-    scroll-behavior: smooth; /* EL BOTÓN DE PRODUCTOS FUNCIONA GRACIAS A ESTO */
+    scroll-behavior: smooth; /* FUNCIÓN CLAVE PARA LA NAVEGACIÓN SUAVE */
 }
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #1A2A3A;
+    background-color: #1A2A3A; 
     color: #FFFFFF;
     margin: 0;
     padding: 0;
@@ -15,43 +15,93 @@ body {
 
 /* Variables de Color */
 :root {
-    --accent-color: #1E90FF; /* Azul Elegante */
+    --accent-color: #1E90FF; /* Azul Elegante (Dodger Blue) */
     --hover-accent-color: #4da6ff;
 }
 
-/* -------------------- KEYFRAMES DE ANIMACIÓN (Se mantienen) -------------------- */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+/* -------------------- KEYFRAMES DE ANIMACIÓN -------------------- */
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideInFromTop { from { transform: translateY(-50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+@keyframes scaleIn { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+/* -------------------- Navbar -------------------- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: #101c27; 
+    border-bottom: 1px solid #3d5a76;
+    animation: slideInFromTop 0.8s ease-out forwards; 
+    position: sticky; 
+    top: 0;
+    z-index: 1000;
 }
 
-@keyframes slideInFromTop {
-    from { transform: translateY(-50px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--accent-color);
+    opacity: 0; 
+    animation: fadeIn 0.8s ease-out 0.5s forwards; 
 }
 
-@keyframes scaleIn {
-    from { transform: scale(0.8); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
+.navbar nav a {
+    color: #ccc;
+    text-decoration: none;
+    margin-right: 20px;
+    transition: color 0.3s ease-in-out, transform 0.2s ease-in-out; 
+    opacity: 0; 
+    animation: fadeIn 0.8s ease-out forwards;
 }
 
-/* -------------------- Navbar y Hero (Se mantienen) -------------------- */
-/* ... (Todo el código del Navbar y Hero es el mismo que el anterior) ... */
+.navbar nav a:hover {
+    color: var(--hover-accent-color); 
+    transform: translateY(-2px); 
+}
 
+.login-btn {
+    background-color: var(--accent-color); 
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    opacity: 0; 
+    animation: scaleIn 0.6s ease-out 1s forwards; 
+}
 
-/* -------------------- NUEVA SECCIÓN: MÉTRICAS -------------------- */
+.login-btn:hover {
+    background-color: var(--hover-accent-color);
+    transform: scale(1.05); 
+}
+
+/* -------------------- Hero Section -------------------- */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    opacity: 0;
+    animation: slideInFromTop 0.8s ease-out 1.2s forwards; 
+}
+/* ... Estilos de párrafo y botones del Hero se mantienen ... */
+
+/* -------------------- SECCIÓN: MÉTRICAS -------------------- */
 .metrics-section {
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding: 40px 20px;
-    background-color: #101c27; /* Un color de fondo contrastante */
-    max-width: 100%;
+    background-color: #101c27;
     margin: 0;
     text-align: center;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    
-    /* Animación de entrada */
     opacity: 0;
     animation: fadeIn 1s ease-out 2.2s forwards;
 }
@@ -66,7 +116,7 @@ body {
 .metric-number {
     font-size: 36px;
     font-weight: bold;
-    color: var(--accent-color); /* El número con el color de acento */
+    color: var(--accent-color); 
     margin-bottom: 5px;
 }
 
@@ -75,10 +125,8 @@ body {
     color: #ccc;
     text-transform: uppercase;
 }
-/* -------------------- FIN MÉTRICAS -------------------- */
 
-
-/* -------------------- Featured Products (Se mantienen con ajustes menores) -------------------- */
+/* -------------------- Featured Products -------------------- */
 .featured-products {
     padding: 50px 20px;
     text-align: center;
@@ -91,6 +139,48 @@ body {
     opacity: 0;
     animation: fadeIn 1s ease-out 0.2s forwards;
 }
-/* ... (El resto del estilo de product-grid y product-card es el mismo) ... */
 
-/* ... (El resto del CSS se mantiene igual: botones, footer, etc.) ... */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px; 
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
+}
+
+.product-card {
+    background-color: #101c27; 
+    border-radius: 10px;
+    overflow: hidden;
+    padding-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    opacity: 0; 
+    animation: scaleIn 0.7s ease-out forwards;
+}
+
+.product-card:hover {
+    transform: translateY(-10px) scale(1.03); 
+    box-shadow: 0 10px 25px rgba(30, 144, 255, 0.5); 
+}
+/* ... Estilos de tarjetas, botones de compra se mantienen ... */
+
+
+/* -------------------- Seccion Contacto -------------------- */
+.contact {
+    text-align: center; 
+    padding: 150px 50px; /* Aumentado para forzar el scroll y probar el botón */
+    color: #fff;
+}
+
+/* -------------------- Footer -------------------- */
+footer {
+    background-color: #101c27;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    border-top: 1px solid #3d5a76;
+    color: #aaa;
+    opacity: 0;
+    animation: fadeIn 1s ease-out 1s forwards; 
+}
