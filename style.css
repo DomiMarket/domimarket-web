@@ -1,152 +1,261 @@
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* Base y Reset */
 body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #eef2ff;
-  scroll-behavior: smooth;
+    font-family: 'Arial', sans-serif;
+    background-color: #121212; /* Fondo Oscuro Principal */
+    color: #FFFFFF; /* Texto Blanco Principal */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    overflow-x: hidden; /* Evita barras de desplazamiento horizontal por animaciones */
 }
 
-/* Navbar */
+/* -------------------- KEYFRAMES DE ANIMACIÓN -------------------- */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInFromTop {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideInFromLeft {
+    from { transform: translateX(-100px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInFromRight {
+    from { transform: translateX(100px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes scaleIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+
+/* -------------------- Navbar -------------------- */
 .navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: rgba(30, 30, 60, 0.95);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 40px;
-  z-index: 1000;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: #1a1a1a;
+    border-bottom: 1px solid #333;
+    animation: slideInFromTop 0.8s ease-out forwards; /* Animación de entrada */
 }
 
-.nav-logo {
-  width: 50px;
-  border-radius: 50%;
-  margin-right: 15px;
-}
-
-.logo-nav {
-  display: flex;
-  align-items: center;
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #7F5AF0;
+    opacity: 0; /* Oculto inicialmente para animación */
+    animation: fadeIn 0.8s ease-out 0.5s forwards; /* Aparece después del navbar */
 }
 
 .navbar nav a {
-  margin: 0 15px;
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s, transform 0.2s;
+    color: #ccc;
+    text-decoration: none;
+    margin-right: 20px;
+    transition: color 0.3s ease-in-out, transform 0.2s ease-in-out; /* Más transiciones */
+    opacity: 0; /* Oculto inicialmente */
+    animation: fadeIn 0.8s ease-out forwards;
+    animation-delay: var(--delay); /* Usaremos una variable para el retraso en JS */
 }
 
 .navbar nav a:hover {
-  color: #5865F2;
-  transform: scale(1.1);
-}
-
-.login-btn-header {
-  background-color: #5865F2;
-  padding: 10px 20px;
-  border-radius: 12px;
-  text-decoration: none;
-  color: #fff;
-  font-weight: bold;
-  transition: all 0.3s ease;
-}
-
-.login-btn-header:hover {
-  background-color: #4752c4;
-  transform: scale(1.05);
-}
-
-/* Hero */
-.hero {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(135deg, #4e54c8, #6f86d6);
-  color: #fff;
-  text-align: center;
-  padding: 0 20px;
-  padding-top: 80px; /* para dar espacio al navbar */
-}
-
-.hero-content h1 {
-  font-size: 48px;
-  margin-bottom: 15px;
-}
-
-.hero-content p {
-  font-size: 20px;
-  margin-bottom: 25px;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+    color: #9f7af9; /* Ligeramente más brillante */
+    transform: translateY(-2px); /* Pequeño levantamiento */
 }
 
 .login-btn {
-  display: inline-block;
-  background-color: #5865F2;
-  color: #fff;
-  padding: 16px 32px;
-  border-radius: 12px;
-  text-decoration: none;
-  font-size: 18px;
-  font-weight: bold;
-  transition: all 0.3s ease;
+    background-color: #7F5AF0;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    opacity: 0; /* Oculto inicialmente */
+    animation: scaleIn 0.6s ease-out 1s forwards; /* Aparece con escala */
 }
 
 .login-btn:hover {
-  background-color: #4752c4;
-  transform: scale(1.1);
+    background-color: #9f7af9;
+    transform: scale(1.05); /* Ligeramente más grande */
 }
 
-/* Productos */
-.products {
-  padding: 100px 20px;
-  text-align: center;
-  background: #fff;
+/* -------------------- Hero Section -------------------- */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: url('placeholder-background.jpg') no-repeat center center/cover;
+    /* La animación se aplicará a los elementos internos */
 }
 
-.products h2 {
-  font-size: 36px;
-  margin-bottom: 40px;
-  color: #4e54c8;
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    opacity: 0;
+    animation: slideInFromTop 0.8s ease-out 1.2s forwards; /* Retraso para aparecer después del navbar */
 }
 
-.product-list {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
+.hero p {
+    font-size: 18px;
+    color: #ccc;
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+    opacity: 0;
+    animation: fadeIn 1s ease-out 1.5s forwards; /* Retraso */
+}
+
+.hero-buttons button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: transform 0.2s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    opacity: 0;
+    animation: scaleIn 0.6s ease-out forwards;
+}
+
+.hero-buttons .primary-btn {
+    background-color: #7F5AF0;
+    color: white;
+    animation-delay: 1.8s; /* Aparece un poco más tarde */
+}
+
+.hero-buttons .secondary-btn {
+    background-color: transparent;
+    color: #7F5AF0;
+    border: 2px solid #7F5AF0 !important;
+    animation-delay: 2s; /* Aparece un poco más tarde que el primario */
+}
+
+.hero-buttons button:hover {
+    transform: translateY(-5px); /* Más notorio */
+}
+
+/* -------------------- Featured Products -------------------- */
+.featured-products {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.featured-products h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #7F5AF0;
+    opacity: 0;
+    animation: fadeIn 1s ease-out 0.2s forwards; /* Animación de entrada */
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
 }
 
 .product-card {
-  background: linear-gradient(135deg, #6f86d6, #48c6ef);
-  color: #fff;
-  padding: 25px;
-  border-radius: 20px;
-  width: 280px;
-  transition: all 0.4s ease;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    overflow: hidden;
+    padding-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    opacity: 0; /* Oculto inicialmente */
+    animation: scaleIn 0.7s ease-out forwards;
 }
 
+/* Esto lo manejaremos con JS para que las tarjetas aparezcan escalonadamente */
 .product-card:hover {
-  transform: translateY(-12px) rotate(-1deg);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    transform: translateY(-10px) scale(1.03); /* Más notorio */
+    box-shadow: 0 10px 25px rgba(127, 90, 240, 0.5); /* Sombra más pronunciada con color de acento */
 }
 
-/* Footer */
+.product-image {
+    height: 180px;
+    background-color: #333;
+    margin-bottom: 15px;
+}
+
+.product-card h3 {
+    margin: 0 0 5px 0;
+    padding: 0 15px;
+    font-size: 20px;
+}
+
+.price {
+    color: #2ECC71;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.card-actions button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    margin: 0 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.detail-btn {
+    background-color: #444;
+    color: white;
+}
+.detail-btn:hover {
+    background-color: #555;
+    transform: translateY(-2px);
+}
+
+.buy-btn {
+    background-color: #7F5AF0;
+    color: white;
+}
+.buy-btn:hover {
+    background-color: #9f7af9;
+    transform: translateY(-2px);
+}
+
+.load-more-btn {
+    background-color: transparent;
+    color: #7F5AF0;
+    border: 1px solid #7F5AF0;
+    padding: 10px 30px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    margin-top: 30px; /* Separación de las tarjetas */
+    opacity: 0;
+    animation: scaleIn 0.7s ease-out 0.8s forwards; /* Animación de entrada */
+}
+
+.load-more-btn:hover {
+    background-color: #7F5AF0;
+    color: white;
+    transform: translateY(-5px);
+}
+
+/* -------------------- Footer -------------------- */
 footer {
-  padding: 40px 20px;
-  text-align: center;
-  background-color: #4e54c8;
-  color: #fff;
-  font-size: 14px;
+    background-color: #1a1a1a;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    border-top: 1px solid #333;
+    color: #aaa;
+    opacity: 0;
+    animation: fadeIn 1s ease-out 1s forwards; /* Animación de entrada */
 }

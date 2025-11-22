@@ -1,60 +1,74 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DomiMarket</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DomiMarket - Tu tienda de recursos</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Navbar -->
-  <header class="navbar">
-    <div class="logo-nav">
-      <img src="https://i.postimg.cc/Z5ZTtjpT/Gemini-Generated-Image-6bppp06bppp06bpp.png" alt="Logo DomiMarket" class="nav-logo">
-      <nav>
-        <a href="#hero">Inicio</a>
-        <a href="#products">Productos</a>
-        <a href="#contact">Contacto</a>
-      </nav>
-    </div>
-    <a href="#login" class="login-btn-header">Iniciar sesión</a>
-  </header>
 
-  <!-- Hero -->
-  <section class="hero" id="hero">
-    <div class="hero-content">
-      <h1>DomiMarket</h1>
-      <p>Recursos exclusivos de MTA. Todo lo que necesitas al alcance de un click.</p>
-      <a href="#login" class="login-btn">Iniciar sesión con Discord</a>
-    </div>
-  </section>
+    <header class="navbar">
+        <div class="logo">DomiMarket</div>
+        <nav>
+            <a href="#">Inicio</a>
+            <a href="#">Productos</a>
+            <a href="#">Contacto</a>
+            <button class="login-btn" id="loginBtn">Iniciar Sesión</button>
+        </nav>
+    </header>
 
-  <!-- Productos destacados -->
-  <section class="products" id="products">
-    <h2>Recursos Destacados</h2>
-    <div class="product-list">
-      <div class="product-card">
-        <h3>Recurso Premium 1</h3>
-        <p>Optimizado para rendimiento y calidad.</p>
-      </div>
-      <div class="product-card">
-        <h3>Recurso Premium 2</h3>
-        <p>Incluye todas las herramientas esenciales.</p>
-      </div>
-      <div class="product-card">
-        <h3>Recurso Premium 3</h3>
-        <p>Fácil de instalar y compatible.</p>
-      </div>
-    </div>
-  </section>
+    <section class="hero">
+        <h1>Bienvenido a DomiMarket</h1>
+        <p>Tu fuente de Models y Scripts premium para MTA. Lleva tu servidor al siguiente nivel con contenido único, funcional y de alta calidad.</p>
+        <div class="hero-buttons">
+            <button class="primary-btn">Ver Recursos</button>
+            <button class="secondary-btn">Discord</button>
+        </div>
+    </section>
 
-  <!-- Contacto / Footer -->
-  <footer id="contact">
-    <p>&copy; 2025 DomiMarket. Todos los derechos reservados.</p>
-  </footer>
+    <section class="featured-products">
+        <h2>Productos Destacados</h2>
+        
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-image"></div>
+                <h3>Apartamentos</h3>
+                <p class="price">$0.00 (GRATIS)</p>
+                <div class="card-actions">
+                    <button class="detail-btn">Detalles</button>
+                    <button class="buy-btn">Comprar</button>
+                </div>
+            </div>
 
-  <div id="login"></div>
+            <div class="product-card">
+                <div class="product-image"></div>
+                <h3>Inventario Completo</h3>
+                <p class="price">$16.00</p>
+                <div class="card-actions">
+                    <button class="detail-btn">Detalles</button>
+                    <button class="buy-btn">Comprar</button>
+                </div>
+            </div>
 
-  <script src="script.js"></script>
+            <div class="product-card">
+                <div class="product-image"></div>
+                <h3>Plano Ilimitado</h3>
+                <p class="price">$10.00</p>
+                <div class="card-actions">
+                    <button class="detail-btn">Detalles</button>
+                    <button class="buy-btn">Comprar</button>
+                </div>
+            </div>
+        </div>
+        
+        <button class="load-more-btn">Ver Todos los Productos</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 DomiMarket. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
