@@ -1,15 +1,25 @@
 /* Base y Reset */
+html {
+    scroll-behavior: smooth; /* HABILITA EL DESPLAZAMIENTO SUAVE */
+}
+
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #121212; /* Fondo Oscuro Principal */
-    color: #FFFFFF; /* Texto Blanco Principal */
+    background-color: #1A2A3A; /* NUEVO FONDO OSCURO AZULADO */
+    color: #FFFFFF;
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    overflow-x: hidden; /* Evita barras de desplazamiento horizontal por animaciones */
+    overflow-x: hidden;
 }
 
-/* -------------------- KEYFRAMES DE ANIMACIÓN -------------------- */
+/* Variables de Color */
+:root {
+    --accent-color: #1E90FF; /* NUEVO AZUL DE ACENTO */
+    --hover-accent-color: #4da6ff; /* Azul más claro al hacer hover */
+}
+
+/* -------------------- KEYFRAMES DE ANIMACIÓN (Se mantienen) -------------------- */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -32,15 +42,18 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 15px 50px;
-    background-color: #1a1a1a;
-    border-bottom: 1px solid #333;
-    animation: slideInFromTop 0.8s ease-out forwards; /* Animación de entrada */
+    background-color: #101c27; /* Fondo de navbar ligeramente más oscuro */
+    border-bottom: 1px solid #3d5a76;
+    animation: slideInFromTop 0.8s ease-out forwards;
+    position: sticky; /* Sticky para que se quede arriba al hacer scroll */
+    top: 0;
+    z-index: 1000;
 }
 
 .logo {
     font-size: 24px;
     font-weight: bold;
-    color: #7F5AF0; /* Color de acento (Púrpura) */
+    color: var(--accent-color); /* Aplica el nuevo azul */
     opacity: 0; 
     animation: fadeIn 0.8s ease-out 0.5s forwards; 
 }
@@ -52,16 +65,15 @@ body {
     transition: color 0.3s ease-in-out, transform 0.2s ease-in-out; 
     opacity: 0; 
     animation: fadeIn 0.8s ease-out forwards;
-    /* El retraso exacto se aplicará con JavaScript para el efecto escalonado */
 }
 
 .navbar nav a:hover {
-    color: #9f7af9; 
+    color: var(--hover-accent-color); 
     transform: translateY(-2px); 
 }
 
 .login-btn {
-    background-color: #7F5AF0;
+    background-color: var(--accent-color); /* Aplica el nuevo azul */
     color: white;
     border: none;
     padding: 8px 15px;
@@ -74,11 +86,11 @@ body {
 }
 
 .login-btn:hover {
-    background-color: #9f7af9;
+    background-color: var(--hover-accent-color);
     transform: scale(1.05); 
 }
 
-/* -------------------- Hero Section (Panel de Inicio) -------------------- */
+/* -------------------- Hero Section -------------------- */
 .hero {
     text-align: center;
     padding: 80px 20px;
@@ -114,15 +126,15 @@ body {
 }
 
 .hero-buttons .primary-btn {
-    background-color: #7F5AF0;
+    background-color: var(--accent-color);
     color: white;
     animation-delay: 1.8s;
 }
 
 .hero-buttons .secondary-btn {
     background-color: transparent;
-    color: #7F5AF0;
-    border: 2px solid #7F5AF0 !important;
+    color: var(--accent-color);
+    border: 2px solid var(--accent-color) !important;
     animation-delay: 2s;
 }
 
@@ -139,14 +151,13 @@ body {
 .featured-products h2 {
     font-size: 32px;
     margin-bottom: 40px;
-    color: #7F5AF0;
+    color: var(--accent-color);
     opacity: 0;
     animation: fadeIn 1s ease-out 0.2s forwards;
 }
 
 .product-grid {
     display: grid;
-    /* Diseño de cuadrícula adaptable: Mínimo 300px por columna */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
     gap: 30px; 
     max-width: 1200px;
@@ -154,7 +165,7 @@ body {
 }
 
 .product-card {
-    background-color: #1a1a1a;
+    background-color: #101c27; /* Fondo de tarjeta ligeramente más oscuro */
     border-radius: 10px;
     overflow: hidden;
     padding-bottom: 20px;
@@ -162,17 +173,17 @@ body {
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     opacity: 0; 
     animation: scaleIn 0.7s ease-out forwards;
-    /* El retraso exacto se aplicará con JavaScript para el efecto escalonado */
 }
 
 .product-card:hover {
     transform: translateY(-10px) scale(1.03); 
-    box-shadow: 0 10px 25px rgba(127, 90, 240, 0.5); 
+    /* Sombra con el nuevo color azul */
+    box-shadow: 0 10px 25px rgba(30, 144, 255, 0.5); 
 }
 
 .product-image {
     height: 180px;
-    background-color: #333; 
+    background-color: #3d5a76; /* Placeholder de imagen con color suave */
     margin-bottom: 15px;
 }
 
@@ -189,7 +200,7 @@ body {
 }
 
 .price {
-    color: #2ECC71; /* Verde para el precio */
+    color: #2ECC71; 
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 15px;
@@ -206,27 +217,27 @@ body {
 }
 
 .detail-btn {
-    background-color: #444;
+    background-color: #3d5a76;
     color: white;
 }
 .detail-btn:hover {
-    background-color: #555;
+    background-color: #5d7790;
     transform: translateY(-2px);
 }
 
 .buy-btn {
-    background-color: #7F5AF0;
+    background-color: var(--accent-color);
     color: white;
 }
 .buy-btn:hover {
-    background-color: #9f7af9;
+    background-color: var(--hover-accent-color);
     transform: translateY(-2px);
 }
 
 .load-more-btn {
     background-color: transparent;
-    color: #7F5AF0;
-    border: 1px solid #7F5AF0;
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
     padding: 10px 30px;
     border-radius: 5px;
     font-size: 16px;
@@ -238,18 +249,26 @@ body {
 }
 
 .load-more-btn:hover {
-    background-color: #7F5AF0;
+    background-color: var(--accent-color);
     color: white;
     transform: translateY(-5px);
 }
 
+/* -------------------- HR Separator -------------------- */
+hr {
+    border: none;
+    height: 1px;
+    background-color: #3d5a76;
+    margin: 40px 5%;
+}
+
 /* -------------------- Footer -------------------- */
 footer {
-    background-color: #1a1a1a;
+    background-color: #101c27;
     text-align: center;
     padding: 20px;
     margin-top: 50px;
-    border-top: 1px solid #333;
+    border-top: 1px solid #3d5a76;
     color: #aaa;
     opacity: 0;
     animation: fadeIn 1s ease-out 1s forwards; 
