@@ -3,36 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DomiMarket - Acceso Exitoso</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        /* Estilos específicos para la caja de éxito */
-        body { text-align: center; padding: 50px; background-color: #1A2A3A; color: #fff; }
-        .success-box {
-            background-color: #1E90FF;
-            color: white; 
-            padding: 40px; 
-            border-radius: 10px; 
-            margin: 50px auto;
-            max-width: 600px;
-            box-shadow: 0 0 20px rgba(30, 144, 255, 0.5);
-            animation: fadeIn 1s ease-out;
-        }
-    </style>
+    <title>Redirigiendo...</title>
+    
     <script>
         // 1. Guardar el estado de login en localStorage
         localStorage.setItem('domimarket_auth', 'true');
 
-        // 2. Redirigir a la página principal después de 3 segundos para que el usuario vea el mensaje
-        setTimeout(function() {
-            window.location.href = 'index.html';
-        }, 3000); 
+        // 2. Redirigir a la página principal inmediatamente
+        window.location.href = 'index.html';
     </script>
-    </head>
+</head>
 <body>
-    <div class="success-box">
-        <h1>¡Acceso Exitoso! ✅</h1>
-        <p>Estamos verificando tus credenciales. Serás redirigido a la página principal en breve.</p>
-    </div>
-</body>
+    </body>
 </html>
