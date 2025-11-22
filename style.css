@@ -20,16 +20,6 @@ body {
     to { transform: translateY(0); opacity: 1; }
 }
 
-@keyframes slideInFromLeft {
-    from { transform: translateX(-100px); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
-}
-
-@keyframes slideInFromRight {
-    from { transform: translateX(100px); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
-}
-
 @keyframes scaleIn {
     from { transform: scale(0.8); opacity: 0; }
     to { transform: scale(1); opacity: 1; }
@@ -50,24 +40,24 @@ body {
 .logo {
     font-size: 24px;
     font-weight: bold;
-    color: #7F5AF0;
-    opacity: 0; /* Oculto inicialmente para animación */
-    animation: fadeIn 0.8s ease-out 0.5s forwards; /* Aparece después del navbar */
+    color: #7F5AF0; /* Color de acento (Púrpura) */
+    opacity: 0; 
+    animation: fadeIn 0.8s ease-out 0.5s forwards; 
 }
 
 .navbar nav a {
     color: #ccc;
     text-decoration: none;
     margin-right: 20px;
-    transition: color 0.3s ease-in-out, transform 0.2s ease-in-out; /* Más transiciones */
-    opacity: 0; /* Oculto inicialmente */
+    transition: color 0.3s ease-in-out, transform 0.2s ease-in-out; 
+    opacity: 0; 
     animation: fadeIn 0.8s ease-out forwards;
-    animation-delay: var(--delay); /* Usaremos una variable para el retraso en JS */
+    /* El retraso exacto se aplicará con JavaScript para el efecto escalonado */
 }
 
 .navbar nav a:hover {
-    color: #9f7af9; /* Ligeramente más brillante */
-    transform: translateY(-2px); /* Pequeño levantamiento */
+    color: #9f7af9; 
+    transform: translateY(-2px); 
 }
 
 .login-btn {
@@ -79,28 +69,26 @@ body {
     cursor: pointer;
     font-weight: bold;
     transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
-    opacity: 0; /* Oculto inicialmente */
-    animation: scaleIn 0.6s ease-out 1s forwards; /* Aparece con escala */
+    opacity: 0; 
+    animation: scaleIn 0.6s ease-out 1s forwards; 
 }
 
 .login-btn:hover {
     background-color: #9f7af9;
-    transform: scale(1.05); /* Ligeramente más grande */
+    transform: scale(1.05); 
 }
 
-/* -------------------- Hero Section -------------------- */
+/* -------------------- Hero Section (Panel de Inicio) -------------------- */
 .hero {
     text-align: center;
     padding: 80px 20px;
-    background: url('placeholder-background.jpg') no-repeat center center/cover;
-    /* La animación se aplicará a los elementos internos */
 }
 
 .hero h1 {
     font-size: 48px;
     margin-bottom: 10px;
     opacity: 0;
-    animation: slideInFromTop 0.8s ease-out 1.2s forwards; /* Retraso para aparecer después del navbar */
+    animation: slideInFromTop 0.8s ease-out 1.2s forwards; 
 }
 
 .hero p {
@@ -109,7 +97,7 @@ body {
     max-width: 700px;
     margin: 0 auto 30px auto;
     opacity: 0;
-    animation: fadeIn 1s ease-out 1.5s forwards; /* Retraso */
+    animation: fadeIn 1s ease-out 1.5s forwards; 
 }
 
 .hero-buttons button {
@@ -120,7 +108,7 @@ body {
     font-weight: bold;
     cursor: pointer;
     margin: 0 10px;
-    transition: transform 0.2s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    transition: transform 0.2s ease-in-out, background-color 0.3s ease-in-out;
     opacity: 0;
     animation: scaleIn 0.6s ease-out forwards;
 }
@@ -128,21 +116,21 @@ body {
 .hero-buttons .primary-btn {
     background-color: #7F5AF0;
     color: white;
-    animation-delay: 1.8s; /* Aparece un poco más tarde */
+    animation-delay: 1.8s;
 }
 
 .hero-buttons .secondary-btn {
     background-color: transparent;
     color: #7F5AF0;
     border: 2px solid #7F5AF0 !important;
-    animation-delay: 2s; /* Aparece un poco más tarde que el primario */
+    animation-delay: 2s;
 }
 
 .hero-buttons button:hover {
-    transform: translateY(-5px); /* Más notorio */
+    transform: translateY(-5px); 
 }
 
-/* -------------------- Featured Products -------------------- */
+/* -------------------- Featured Products (Área de Productos) -------------------- */
 .featured-products {
     padding: 50px 20px;
     text-align: center;
@@ -153,13 +141,14 @@ body {
     margin-bottom: 40px;
     color: #7F5AF0;
     opacity: 0;
-    animation: fadeIn 1s ease-out 0.2s forwards; /* Animación de entrada */
+    animation: fadeIn 1s ease-out 0.2s forwards;
 }
 
 .product-grid {
     display: grid;
+    /* Diseño de cuadrícula adaptable: Mínimo 300px por columna */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-    gap: 30px;
+    gap: 30px; 
     max-width: 1200px;
     margin: 0 auto 40px auto;
 }
@@ -171,19 +160,19 @@ body {
     padding-bottom: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    opacity: 0; /* Oculto inicialmente */
+    opacity: 0; 
     animation: scaleIn 0.7s ease-out forwards;
+    /* El retraso exacto se aplicará con JavaScript para el efecto escalonado */
 }
 
-/* Esto lo manejaremos con JS para que las tarjetas aparezcan escalonadamente */
 .product-card:hover {
-    transform: translateY(-10px) scale(1.03); /* Más notorio */
-    box-shadow: 0 10px 25px rgba(127, 90, 240, 0.5); /* Sombra más pronunciada con color de acento */
+    transform: translateY(-10px) scale(1.03); 
+    box-shadow: 0 10px 25px rgba(127, 90, 240, 0.5); 
 }
 
 .product-image {
     height: 180px;
-    background-color: #333;
+    background-color: #333; 
     margin-bottom: 15px;
 }
 
@@ -193,8 +182,14 @@ body {
     font-size: 20px;
 }
 
+.product-card .description {
+    color: #ccc;
+    font-size: 14px;
+    padding: 0 15px 10px;
+}
+
 .price {
-    color: #2ECC71;
+    color: #2ECC71; /* Verde para el precio */
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 15px;
@@ -237,9 +232,9 @@ body {
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.2s ease-in-out;
-    margin-top: 30px; /* Separación de las tarjetas */
+    margin-top: 30px; 
     opacity: 0;
-    animation: scaleIn 0.7s ease-out 0.8s forwards; /* Animación de entrada */
+    animation: scaleIn 0.7s ease-out 0.8s forwards; 
 }
 
 .load-more-btn:hover {
@@ -257,5 +252,5 @@ footer {
     border-top: 1px solid #333;
     color: #aaa;
     opacity: 0;
-    animation: fadeIn 1s ease-out 1s forwards; /* Animación de entrada */
+    animation: fadeIn 1s ease-out 1s forwards; 
 }
