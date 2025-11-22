@@ -1,11 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // -------------------- 1. Funcionalidad de Botones y Alertas --------------------
+    // -------------------- 1. Funcionalidad de Botones y Redirección Discord --------------------
     const loginButton = document.getElementById('loginBtn');
     const buyButtons = document.querySelectorAll('.buy-btn');
 
-    loginButton.addEventListener('click', () => {
-        alert('¡Bienvenido a DomiMarket! El sistema de inicio de sesión necesita más código backend para funcionar, pero la función fue llamada.');
-    });
+    // ** URL FINAL CORREGIDA para el flujo de Discord **
+    // Apunta a callback.html para evitar errores de servidor.
+    const DISCORD_AUTH_URL = 
+        'https://discord.com/api/oauth2/authorize?' +
+        'client_id=1438645485773652241' + 
+        '&redirect_uri=https%3A%2F%2Fdomimarket.github.io%2Fdomimarket-web%2Fcallback.html' + // URI final
+        '&response_type=code' + 
+        '&scope=identify'; 
+    
+    if (loginButton) {
+        loginButton.addEventListener('click', () => {
+            window.location.href = DISCORD_AUTH_URL; 
+        });
+    }
 
     buyButtons.forEach(button => {
         button.addEventListener('click', (event) => {
