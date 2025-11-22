@@ -14,7 +14,6 @@
             <a href="#hero-section">Inicio</a>
             <a href="#products-section">Productos</a> 
             <a href="#contact-section">Contacto</a>
-            <a href="panel.html" id="panelLink" style="display: none;">Panel</a>
             <button class="login-btn" id="loginBtn">Iniciar Sesión</button>
         </nav>
     </header>
@@ -113,22 +112,21 @@
 
 ---
 
-## 2. 💻 `script.js` (Lógica de Login/Logout y Panel)
+## 2. 💻 `script.js` (Lógica Estable Login/Logout)
 
-Esta es la parte **más importante** para que el botón funcione. El `if (loginButton)` asegura que el evento se adjunte.
+Esta versión es la que garantiza que el botón `loginBtn` siempre funcione con la acción correcta.
 
 ```javascript
 <blockquote class="not-prose">
 document.addEventListener('DOMContentLoaded', () => {
     // -------------------- 1. Funcionalidad de Botones y Redirección Discord --------------------
-    const loginButton = document.getElementById('loginBtn'); // Debe coincidir con el ID de index.html
+    const loginButton = document.getElementById('loginBtn');
     const buyButtons = document.querySelectorAll('.buy-btn');
-    const panelLink = document.getElementById('panelLink');
 
     // Estado de login desde localStorage
     const isLoggedIn = localStorage.getItem('domimarket_auth') === 'true';
 
-    // ** URL FINAL CORREGIDA para el flujo de Discord **
+    // ** URL FINAL CORRECTA **
     const DISCORD_AUTH_URL = 
         '[https://discord.com/api/oauth2/authorize](https://discord.com/api/oauth2/authorize)?' +
         'client_id=1438645485773652241' + 
@@ -138,17 +136,10 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // >>> LÓGICA DE VISIBILIDAD DE BOTONES <<<
     if (isLoggedIn) {
+        // Si está logueado, cambia el botón a "Salir"
         loginButton.textContent = 'Salir';
         loginButton.style.backgroundColor = '#FF4500'; 
         loginButton.style.boxShadow = 'none'; 
-        
-        if (panelLink) {
-            panelLink.style.display = 'inline-block'; 
-        }
-    } else {
-        if (panelLink) {
-            panelLink.style.display = 'none'; 
-        }
     }
 
     // >>> LISTENER DEL BOTÓN DE LOGIN/SALIR <<<
@@ -165,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // -------------------- 2. Animaciones Escalonadas (Se mantiene igual) --------------------
+    // -------------------- 2. Animaciones Escalonadas --------------------
     const navLinks = document.querySelectorAll('.navbar nav a');
     navLinks.forEach((link, index) => {
         link.style.setProperty('animation-delay', `${0.6 + index * 0.1}s`); 
@@ -176,7 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
         card.style.animationDelay = `${0.3 + index * 0.15}s`; 
     });
 
-    // -------------------- 3. Contador Animado para Métricas (Se mantiene igual) --------------------
+    // -------------------- 3. Contador Animado para Métricas --------------------
     const counterObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -212,4 +203,30 @@ document.addEventListener('DOMContentLoaded', () => {
         counterObserver.observe(metricsSection);
     }
 });
+</blockquote>
+
+---
+
+## 3. 📄 `callback.html` (Redirección Secreta y Estable)
+
+```html
+<blockquote class="not-prose">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirigiendo...</title>
+    
+    <script>
+        // 1. Guardar el estado de login en localStorage
+        localStorage.setItem('domimarket_auth', 'true');
+
+        // 2. Redirigir a la página principal inmediatamente
+        window.location.href = 'index.html';
+    </script>
+</head>
+<body>
+    </body>
+</html>
 </blockquote>
