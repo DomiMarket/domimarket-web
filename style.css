@@ -1,22 +1,23 @@
-style ccs : /* Base y Reset */
+<blockquote class="not-prose">
+/* Base y Reset */
 html {
-    scroll-behavior: smooth; 
+    scroll-behavior: smooth; 
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #1A2A3A; 
-    color: #FFFFFF;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    overflow-x: hidden;
+    font-family: 'Arial', sans-serif;
+    background-color: #1A2A3A; 
+    color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
 /* Variables de Color */
 :root {
-    --accent-color: #1E90FF; /* Azul Elegante */
-    --hover-accent-color: #4da6ff;
+    --accent-color: #1E90FF; /* Azul Elegante */
+    --hover-accent-color: #4da6ff;
 }
 
 /* -------------------- KEYFRAMES DE ANIMACIÓN -------------------- */
@@ -26,300 +27,445 @@ body {
 
 /* -------------------- Navbar -------------------- */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 50px;
-    background-color: #101c27; 
-    border-bottom: 1px solid #3d5a76;
-    animation: slideInFromTop 0.8s ease-out forwards; 
-    position: sticky; 
-    top: 0;
-    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: #101c27; 
+    border-bottom: 1px solid #3d5a76;
+    animation: slideInFromTop 0.8s ease-out forwards; 
+    position: sticky; 
+    top: 0;
+    z-index: 1000;
 }
 
 .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: var(--accent-color);
-    opacity: 0; 
-    animation: fadeIn 0.8s ease-out 0.5s forwards; 
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--accent-color);
+    opacity: 0; 
+    animation: fadeIn 0.8s ease-out 0.5s forwards; 
 }
 
 .navbar nav a {
-    color: #ccc;
-    text-decoration: none;
-    margin-right: 20px;
-    transition: color 0.3s ease-in-out, transform 0.2s ease-in-out; 
-    opacity: 0; 
-    animation: fadeIn 0.8s ease-out forwards;
+    color: #ccc;
+    text-decoration: none;
+    margin-right: 20px;
+    transition: color 0.3s ease-in-out, transform 0.2s ease-in-out; 
+    opacity: 0; 
+    animation: fadeIn 0.8s ease-out forwards;
 }
 
 .navbar nav a:hover {
-    color: var(--hover-accent-color); 
-    transform: translateY(-2px); 
+    color: var(--hover-accent-color); 
+    transform: translateY(-2px); 
 }
 
 .login-btn {
-    background-color: var(--accent-color); 
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
-    opacity: 0; 
-    animation: scaleIn 0.6s ease-out 1s forwards; 
+    background-color: var(--accent-color); 
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    opacity: 0; 
+    animation: scaleIn 0.6s ease-out 1s forwards; 
 }
 
 .login-btn:hover {
-    background-color: var(--hover-accent-color);
-    transform: scale(1.05); 
+    background-color: var(--hover-accent-color);
+    transform: scale(1.05); 
 }
 
-/* -------------------- Hero Section (¡Fondo Futurista Aquí!) -------------------- */
+/* -------------------- Hero Section -------------------- */
 .hero {
-    text-align: center;
-    padding: 80px 20px;
-    /* >>> ESTILOS DE FONDO FUTRONES: <<< */
-    background-image: url('https://i.postimg.cc/FKy6d5Y5/Gemini-Generated-Image-6bppp06bppp06bpp.png');
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat; 
-    min-height: 500px;
-    position: relative; 
-    z-index: 1; 
+    text-align: center;
+    padding: 80px 20px;
+    background-image: url('https://i.postimg.cc/FKy6d5Y5/Gemini-Generated-Image-6bppp06bppp06bpp.png');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    min-height: 500px;
+    position: relative; 
+    z-index: 1; 
 }
 
-/* Capa oscura para contraste (detrás del texto) */
+/* Capa oscura para contraste */
 .hero::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); 
-    z-index: -1; 
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); 
+    z-index: -1; 
 }
 
 .hero h1 {
-    font-size: 48px;
-    margin-bottom: 10px;
-    opacity: 0;
-    animation: slideInFromTop 0.8s ease-out 1.2s forwards; 
-    text-shadow: 0 0 10px #000; /* Sombra para resaltar */
+    font-size: 48px;
+    margin-bottom: 10px;
+    opacity: 0;
+    animation: slideInFromTop 0.8s ease-out 1.2s forwards; 
+    text-shadow: 0 0 10px #000; 
 }
 
 .hero p {
-    font-size: 20px; /* Hacemos el texto más grande */
-    margin-bottom: 30px;
-    text-shadow: 0 0 8px #000; /* Sombra para contraste */
+    font-size: 20px; 
+    margin-bottom: 30px;
+    text-shadow: 0 0 8px #000; 
 }
 
 /* --- Botones de la Sección Hero --- */
 .hero-buttons {
-    margin-top: 30px;
-    opacity: 0;
-    animation: fadeIn 0.8s ease-out 1.5s forwards;
+    margin-top: 30px;
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out 1.5s forwards;
 }
 
-.primary-btn, .secondary-btn {
-    padding: 12px 25px;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    margin: 0 10px;
+.primary-btn, .secondary-btn, .load-more-btn {
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin: 0 10px; 
+    display: inline-block; 
+    text-decoration: none; 
 }
 
-.primary-btn {
-    background-color: var(--accent-color);
-    color: white;
-    border: none;
-    box-shadow: 0 4px 15px rgba(30, 144, 255, 0.4);
+.primary-btn, .load-more-btn {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 15px rgba(30, 144, 255, 0.4);
 }
 
 .secondary-btn {
-    background-color: transparent;
-    color: var(--accent-color);
-    border: 2px solid var(--accent-color);
+    background-color: transparent;
+    color: var(--accent-color);
+    border: 2px solid var(--accent-color);
 }
 
 /* >>> EFECTOS HOVER (BRILLO) <<< */
-.primary-btn:hover {
-    background-color: var(--hover-accent-color);
-    transform: translateY(-2px); 
-    box-shadow: 0 8px 20px rgba(30, 144, 255, 0.8); /* Brillo intenso */
+.primary-btn:hover, .load-more-btn:hover {
+    background-color: var(--hover-accent-color);
+    transform: translateY(-2px); 
+    box-shadow: 0 8px 20px rgba(30, 144, 255, 0.8); 
 }
 
 .secondary-btn:hover {
-    background-color: rgba(30, 144, 255, 0.1); /* Fondo muy sutil */
-    color: white; /* Resalta el texto */
-    border-color: var(--hover-accent-color);
-    box-shadow: 0 0 15px rgba(30, 144, 255, 0.8); /* Brillo con sombra */
-    transform: translateY(-2px);
+    background-color: rgba(30, 144, 255, 0.1); 
+    color: white; 
+    border-color: var(--hover-accent-color);
+    box-shadow: 0 0 15px rgba(30, 144, 255, 0.8); 
+    transform: translateY(-2px);
 }
 
 /* -------------------- SECCIÓN: MÉTRICAS -------------------- */
 .metrics-section {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 40px 20px;
-    background-color: #101c27;
-    margin: 0;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    opacity: 0;
-    animation: fadeIn 1s ease-out 2.2s forwards;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px 20px;
+    background-color: #101c27;
+    margin: 0;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    animation: fadeIn 1s ease-out 2.2s forwards;
 }
 
 .metric-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
 }
 
 .metric-number {
-    font-size: 36px;
-    font-weight: bold;
-    color: var(--accent-color); 
-    margin-bottom: 5px;
+    font-size: 36px;
+    font-weight: bold;
+    color: var(--accent-color); 
+    margin-bottom: 5px;
 }
 
 .metric-label {
-    font-size: 14px;
-    color: #ccc;
-    text-transform: uppercase;
+    font-size: 14px;
+    color: #ccc;
+    text-transform: uppercase;
 }
 
-/* -------------------- Featured Products -------------------- */
+/* -------------------- Estilo para el Encabezado de la Página de Productos -------------------- */
+.products-page-header {
+    text-align: left; /* Títulos alineados a la izquierda para un look de tienda */
+    padding: 50px 50px 20px 50px;
+    background-color: #1A2A3A; 
+}
+.products-page-header h1 {
+    font-size: 40px;
+    color: var(--accent-color);
+    margin: 0;
+}
+.products-page-header p {
+    color: #ccc;
+    font-size: 16px;
+}
+
+/* -------------------- NUEVOS ESTILOS: Layout con Sidebar -------------------- */
+
+.product-layout {
+    display: flex; 
+    /* Breadcrumb - Esto lo mantendríamos en el HTML, pero es bueno tener en cuenta la estructura */
+    
+    max-width: 1400px;
+    margin: 40px auto;
+    padding: 0 20px;
+    gap: 30px;
+}
+
+.sidebar {
+    width: 250px; /* Ancho fijo para el filtro */
+    flex-shrink: 0;
+    background-color: #101c27; 
+    padding: 20px;
+    border-radius: 8px;
+    height: fit-content; /* Para que solo ocupe el espacio de su contenido */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar h3 {
+    color: var(--accent-color);
+    border-bottom: 1px solid #3d5a76;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+.sidebar ul li a {
+    color: #ccc;
+    text-decoration: none;
+    display: block;
+    padding: 5px 0;
+}
+.sidebar ul li a:hover {
+    color: var(--hover-accent-color);
+}
+
+
+.main-content {
+    flex-grow: 1; /* Permite que el contenido principal ocupe el resto del espacio */
+}
+
+
+/* -------------------- Featured Products (Ajustado al nuevo layout) -------------------- */
 .featured-products {
-    padding: 50px 20px;
-    text-align: center;
+    padding: 0; /* Quitamos el padding superior, ya que está dentro del main-content */
+    text-align: left; /* Alineamos el texto a la izquierda para un look de tienda */
 }
 
 .featured-products h2 {
-    font-size: 32px;
-    margin-bottom: 40px;
-    color: var(--accent-color);
-    opacity: 0;
-    animation: fadeIn 1s ease-out 0.2s forwards;
+    text-align: center; /* Mantenemos el título del h2 centrado si no usamos h1 */
+    margin-bottom: 30px;
 }
 
 .product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-    gap: 30px; 
-    max-width: 1200px;
-    margin: 0 auto 40px auto;
+    display: grid;
+    /* Ajustamos el tamaño de las tarjetas para que quepan mejor al lado del sidebar */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 25px; 
+    max-width: none; /* Quitamos el límite para que se ajuste al main-content */
+    margin: 0;
 }
 
 .product-card {
-    background-color: #101c27; 
-    border-radius: 10px;
-    overflow: hidden;
-    padding-bottom: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    opacity: 0; 
-    animation: scaleIn 0.7s ease-out forwards;
+    background-color: #101c27; 
+    border-radius: 10px;
+    overflow: hidden;
+    padding-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    opacity: 0; 
+    animation: scaleIn 0.7s ease-out forwards;
+    text-align: center; /* Centramos el contenido dentro de la tarjeta */
 }
 
 .product-card:hover {
-    transform: translateY(-10px) scale(1.03); 
-    box-shadow: 0 10px 25px rgba(30, 144, 255, 0.5); 
+    transform: translateY(-5px) scale(1.02); /* Movimiento más sutil */
+    box-shadow: 0 8px 20px rgba(30, 144, 255, 0.4); 
 }
 
 .product-image {
-    /* Aquí iría la imagen del producto, por ahora es un placeholder */
-    height: 180px;
-    background-color: #3d5a76;
-    margin-bottom: 15px;
+    height: 180px;
+    background-color: #3d5a76;
+    margin-bottom: 15px;
 }
+/* ... resto de estilos de tarjetas ... */
 
-.product-card h3 {
-    margin: 0 0 5px 0;
-    color: var(--accent-color);
-}
 
-.product-card .description {
-    font-size: 14px;
-    color: #ccc;
-    padding: 0 20px;
-    min-height: 40px;
-}
-
-.product-card .price {
-    font-size: 20px;
-    font-weight: bold;
-    margin: 15px 0;
-}
-
-.card-actions {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    padding: 0 20px;
-}
-
-.card-actions button {
-    padding: 8px 15px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s;
-}
-
-.detail-btn {
-    background-color: #3d5a76;
-    color: white;
-}
-
-.buy-btn {
-    background-color: var(--accent-color);
-    color: white;
-}
-
-.load-more-btn {
-    background-color: transparent;
-    border: 2px solid var(--accent-color);
-    color: var(--accent-color);
-    padding: 10px 30px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s, color 0.3s;
-    margin-top: 20px;
-}
-
-.load-more-btn:hover {
-    background-color: var(--accent-color);
-    color: white;
-}
-
-/* -------------------- Seccion Contacto -------------------- */
+/* -------------------- Seccion Contacto y Footer -------------------- */
 .contact {
-    text-align: center; 
-    padding: 150px 50px; 
-    color: #fff;
+    text-align: center; 
+    padding: 150px 50px; 
+    color: #fff;
 }
 
 .contact h2 {
-    font-size: 32px;
-    color: var(--accent-color);
-    margin-bottom: 15px;
+    font-size: 32px;
+    color: var(--accent-color);
+    margin-bottom: 15px;
 }
 
-/* -------------------- Footer -------------------- */
 footer {
-    text-align: center;
-    padding: 20px 0;
-    background-color: #101c27;
-    font-size: 14px;
-    color: #ccc;
+    text-align: center;
+    padding: 20px 0;
+    background-color: #101c27;
+    font-size: 14px;
+    color: #ccc;
 }
+</blockquote>
+
+---
+
+## 2. 📄 Archivo `productos.html` (Estructura de Tienda)
+
+Aquí está la estructura del archivo **`productos.html`** con el nuevo **`sidebar`** (barra lateral).
+
+```html
+<blockquote class="not-prose">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DomiMarket - Todos los Productos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">DomiMarket</div>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="productos.html">Productos</a> 
+            <a href="index.html#contact-section">Contacto</a>
+            <button class="login-btn" id="loginBtn">Iniciar Sesión</button>
+        </nav>
+    </header>
+
+    <section class="products-page-header">
+        <h1>Explora todos nuestros recursos</h1>
+        <p>Modelos, Scripts y más contenido premium a tu disposición.</p>
+    </section>
+
+    <div class="product-layout">
+        
+        <aside class="sidebar">
+            <h3>Categorías</h3>
+            <ul>
+                <li><a href="#">Scripts</a></li>
+                <li><a href="#">Modelos (3D)</a></li>
+                <li><a href="#">Texturas</a></li>
+                <li><a href="#">Mapas</a></li>
+            </ul>
+
+            <h3>Precios</h3>
+            <ul>
+                <li><a href="#">Gratis</a></li>
+                <li><a href="#">Menos de $5.00</a></li>
+                <li><a href="#">$5.00 - $15.00</a></li>
+                <li><a href="#">Premium ($15.00+)</a></li>
+            </ul>
+        </aside>
+        
+        <div class="main-content">
+            <section class="featured-products">
+                
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="product-image"></div>
+                        <h3>Apartamentos</h3>
+                        <p class="description">Apartamentos estilo caserío, texturas editables.</p>
+                        <p class="price">$0.00 (GRATIS)</p>
+                        <div class="card-actions">
+                            <button class="detail-btn">Detalles</button>
+                            <button class="buy-btn">Comprar</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image"></div>
+                        <h3>Inventario Completo</h3>
+                        <p class="description">Sistema de Inventario completo para Roleplay.</p>
+                        <p class="price">$16.00</p>
+                        <div class="card-actions">
+                            <button class="detail-btn">Detalles</button>
+                            <button class="buy-btn">Comprar</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image"></div>
+                        <h3>Plano Ilimitado</h3>
+                        <p class="description">Plano Ilimitado acceso mensual a todos los productos de la tienda.</p>
+                        <p class="price">$10.00</p>
+                        <div class="card-actions">
+                            <button class="detail-btn">Detalles</button>
+                            <button class="buy-btn">Comprar</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image"></div>
+                        <h3>Music Studio</h3>
+                        <p class="description">Estudio de Música moderno y exclusivo en la ciudad.</p>
+                        <p class="price">$7.00</p>
+                        <div class="card-actions">
+                            <button class="detail-btn">Detalles</button>
+                            <button class="buy-btn">Comprar</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image"></div>
+                        <h3>(Nuevo Producto 5)</h3>
+                        <p class="description">Aquí va la descripción del producto 5.</p>
+                        <p class="price">$5.00</p>
+                        <div class="card-actions">
+                            <button class="detail-btn">Detalles</button>
+                            <button class="buy-btn">Comprar</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image"></div>
+                        <h3>(Nuevo Producto 6)</h3>
+                        <p class="description">Aquí va la descripción del producto 6.</p>
+                        <p class="price">$12.00</p>
+                        <div class="card-actions">
+                            <button class="detail-btn">Detalles</button>
+                            <button class="buy-btn">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+                
+            </section>
+        </div>
+        
+    </div>
+    <footer>
+        <p>&copy; 2024 DomiMarket. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+</blockquote>
+
+---
+**Paso Final:**
+
+1.  Guarda los cambios en **`style.css`** (con los nuevos estilos de sidebar).
+2.  Asegúrate de que tu **`productos.html`** se vea como el código de arriba (con la estructura de `div class="product-layout"`).
+3.  ¡Haz la **recarga forzada** de tu `index.html`! (`Ctrl + Shift + R`).
+
+Ahora el botón debe funcionar, y la página de destino (`productos.html`) debe tener el diseño de tienda con barra lateral que pediste.
